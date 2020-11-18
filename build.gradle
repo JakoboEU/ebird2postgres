@@ -12,4 +12,6 @@ repositories {
 dependencies {
     implementation 'com.google.guava:guava:29.0-jre'
 	implementation 'com.univocity:univocity-parsers:2.8.4'
+	implementation 'org.apache.commons:commons-lang3:3.11'
+	
 }
