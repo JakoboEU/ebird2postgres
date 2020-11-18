@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import com.google.common.base.Optional;
 import com.univocity.parsers.csv.CsvParser;
 import com.univocity.parsers.csv.CsvParserSettings;
 
@@ -35,7 +35,7 @@ public final class UrbanHotspots {
 			return Optional.of(this.hotspotsToCity.get(localityId));
 		}
 		
-		return Optional.absent();
+		return Optional.empty();
 	}
 	
 	public static void main(final String[] args) throws IOException {

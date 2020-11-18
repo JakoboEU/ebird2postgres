@@ -2,6 +2,9 @@ package ebird2postgres.ebird;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import org.apache.commons.lang3.StringUtils;
@@ -54,10 +57,6 @@ import org.apache.commons.lang3.StringUtils;
 44 species_comments
  */
 public class EBirdRecord {
-
-	private static final SimpleDateFormat OBSERVATION_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
-	private static final SimpleDateFormat OBSERVATION_START_TIME_FORMAT = new SimpleDateFormat("HH:mm:SS");
-	
 	private final String id;
 	private final String commonName;
 	private final String scientificName;
@@ -71,9 +70,8 @@ public class EBirdRecord {
 	private final String localityName;
 	private final double latitude;
 	private final double longitude;
-	private final Date observationDate;
-	private final Integer startTimeHour;
-	private final Integer startTimeMinute;
+	private final LocalDate observationDate;
+	private final LocalTime startTime;
 	private final String checklistId;
 	private final String protocolType;
 	private final String protocolCode;
@@ -100,16 +98,8 @@ public class EBirdRecord {
 		localityId = row[23];
 		latitude = Double.parseDouble(row[25]);
 		longitude = Double.parseDouble(row[26]);
-		observationDate = OBSERVATION_DATE_FORMAT.parse(row[27]);
-		
-		if (row[28] != null) {
-			final Date startTime = OBSERVATION_START_TIME_FORMAT.parse(row[28]);
-			startTimeHour = startTime.getHours();
-			startTimeMinute = startTime.getMinutes();
-		} else {
-			startTimeHour = null;
-			startTimeMinute = null;
-		}
+		observationDate = LocalDate.parse(row[27], DateTimeFormatter.ISO_LOCAL_DATE);
+		startTime = row[28] == null? null : LocalTime.parse(row[28], DateTimeFormatter.ISO_LOCAL_TIME);
 		
 		checklistId = row[30];
 		protocolType = row[31];
@@ -177,16 +167,12 @@ public class EBirdRecord {
 		return longitude;
 	}
 
-	public Date getObservationDate() {
+	public LocalDate getObservationDate() {
 		return observationDate;
 	}
 
-	public int getStartTimeHour() {
-		return startTimeHour;
-	}
-
-	public int getStartTimeMinute() {
-		return startTimeMinute;
+	public LocalTime getStartTime() {
+		return startTime;
 	}
 
 	public String getChecklistId() {
@@ -240,8 +226,7 @@ public class EBirdRecord {
 				+ subspeciesScientificName + ", observationCount=" + observationCount + ", countryCode=" + countryCode
 				+ ", stateCode=" + stateCode + ", countyCode=" + countyCode + ", localityId=" + localityId
 				+ ", localityName=" + localityName + ", latitude=" + latitude + ", longitude=" + longitude
-				+ ", observationDate=" + observationDate + ", startTimeHour=" + startTimeHour + ", startTimeMinute="
-				+ startTimeMinute + ", checklistId=" + checklistId + ", protocolType=" + protocolType
+				+ ", observationDate=" + observationDate + ", startTime=" + startTime + ", checklistId=" + checklistId + ", protocolType=" + protocolType
 				+ ", protocolCode=" + protocolCode + ", duration=" + duration + ", effortDistanceKm=" + effortDistanceKm
 				+ ", effortAreaHa=" + effortAreaHa + ", numberOfObservers=" + numberOfObservers + ", isComplete="
 				+ isComplete + ", groupId=" + groupId + ", recordApproved=" + recordApproved + ", approvalReason="
