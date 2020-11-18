@@ -1,11 +1,9 @@
 package ebird2postgres.ebird;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 import org.apache.commons.lang3.StringUtils;
 
