@@ -3,6 +3,7 @@
 .project
 .settings
 .classpath
+.DS_Store
 
 # Ignore Gradle build output directory
 build
