@@ -2,6 +2,7 @@ package ebird2postgres;
 
 import java.sql.SQLException;
 import java.util.Arrays;
+import java.util.List;
 
 import ebird2postgres.ebird.EBirdErrorHandler;
 import ebird2postgres.ebird.EBirdReader;
@@ -12,10 +13,13 @@ import ebird2postgres.repository.BirdSpecies;
 import ebird2postgres.repository.BirdSpeciesRepository;
 import ebird2postgres.repository.Checklist;
 import ebird2postgres.repository.ChecklistRepository;
+import ebird2postgres.repository.CityLocation;
 import ebird2postgres.repository.Hotspot;
 import ebird2postgres.repository.HotspotRepository;
 import ebird2postgres.repository.ObservationRepository;
 import ebird2postgres.repository.RepositoryFactory;
+
+import static java.util.Collections.singletonList;
 
 public class Importer {
 
@@ -28,8 +32,11 @@ public class Importer {
 	}
 	
 	public void importUrbanHotspots() {
-		reader.read(localityId -> urbanHotspots.getCityName(localityId).isPresent(), 
-				new RecordHandler(true, localityId -> urbanHotspots.getCityName(localityId).get()), 
+		final CityNameProvider urbanLocationProvider =
+				localityId -> singletonList(new CityLocation(urbanHotspots.getCityName(localityId).get(), true));
+
+		reader.read(localityId -> urbanHotspots.getCityName(localityId).isPresent(),
+				new RecordHandler(urbanLocationProvider),
 				new ErrorHandler());
 	}
 	
@@ -38,13 +45,18 @@ public class Importer {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		final Importer importer = new Importer("/Users/jamesr/Dropbox/PhD/eBird/ebd_relAug-2020.txt");
+		if (args.length != 1) {
+			System.out.println("EBird tsv must be specified as argument");
+			System.exit(-1);
+		}
+
+		final Importer importer = new Importer(args[0]);
 		importer.importUrbanHotspots();
 		importer.shutdown();
 	}
 	
 	private interface CityNameProvider {
-		String getCityName(String localityId);
+		List<CityLocation> getCityLocations(String localityId);
 	}
 	
 	private class RecordHandler implements EBirdRecordHandler {
@@ -53,19 +65,17 @@ public class Importer {
 		private final ChecklistRepository checklistRepo = repositoryFactory.checklistRepository();
 		private final HotspotRepository hotspotRepo = repositoryFactory.hotsportRepository();
 		private final ObservationRepository observationRepo = repositoryFactory.observationRepository();
-		private final boolean isUrban;
 		private final CityNameProvider cityNameProvider;
 		
-		RecordHandler(final boolean isUrban, final CityNameProvider cityNameProvider) {
-			this.isUrban = isUrban;
+		RecordHandler(final CityNameProvider cityNameProvider) {
 			this.cityNameProvider = cityNameProvider;
 		}
 		
 		@Override
 		public void handle(EBirdRecord record) {
 			try {
-				final String cityName = cityNameProvider.getCityName(record.getLocalityId());
-				final Hotspot hotspot = hotspotRepo.fetchHotspot(record, cityName, this.isUrban);
+				final List<CityLocation> cityLocations = cityNameProvider.getCityLocations(record.getLocalityId());
+				final Hotspot hotspot = hotspotRepo.fetchHotspot(record, cityLocations);
 				final Checklist checklist = checklistRepo.fetchChecklist(record, hotspot);
 				final BirdSpecies birdSpecies = birdSpeciesRepo.fetchBirdSpecies(record);
 				

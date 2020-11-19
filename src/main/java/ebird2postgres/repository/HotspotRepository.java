@@ -2,6 +2,7 @@ package ebird2postgres.repository;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import com.google.common.cache.Cache;
@@ -21,15 +22,15 @@ public class HotspotRepository {
 		this.connection = connection;
 	}
 
-	public Hotspot fetchHotspot(final EBirdRecord ebirdRecord, final String cityName, final boolean isUrban) throws ExecutionException {
-		return cache.get(ebirdRecord.getLocalityId(), () -> loadHotspot(ebirdRecord, cityName, isUrban));
+	public Hotspot fetchHotspot(final EBirdRecord ebirdRecord, final List<CityLocation> cityLocations) throws ExecutionException {
+		return cache.get(ebirdRecord.getLocalityId(), () -> loadHotspot(ebirdRecord, cityLocations));
 	}
 	
-	private Hotspot loadHotspot(final EBirdRecord ebirdRecord, final String cityName, final boolean isUrban) throws SQLException {
+	private Hotspot loadHotspot(final EBirdRecord ebirdRecord, final List<CityLocation> cityLocations) throws SQLException {
 		return Hotspot.load(connection, ebirdRecord.getLocalityId())
 				.orElseGet(() -> {
 					try {
-						return new Hotspot(ebirdRecord, cityName, isUrban).insert(connection);
+						return new Hotspot(ebirdRecord, cityLocations).insert(connection);
 					} catch (SQLException e) {
 						throw new IllegalStateException("Failed to create hotspot from " + ebirdRecord, e);
 					}

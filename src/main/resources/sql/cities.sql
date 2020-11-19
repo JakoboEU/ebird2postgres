@@ -5,12 +5,12 @@ INSERT INTO city (name, population2015, built_area) VALUES ('Las Vegas', 2026402
 INSERT INTO city (name, population2015, built_area) VALUES ('Phoenix', 3625939.475930999964476, 1697.256967000000031);
 INSERT INTO city (name, population2015, built_area) VALUES ('Guadalajara', 4531686.256277999840677, 355.933196000000009);
 INSERT INTO city (name, population2015, built_area) VALUES ('Seattle', 2699626.524091999977827, 1172.644518999999946);
-INSERT INTO city (name, population2015, built_area) VALUES ('Mexico City', 19515400.157081000506878, 1336.982361999999966);
+INSERT INTO city (name, population2015, built_area) VALUES ('Mexico CityLocation', 19515400.157081000506878, 1336.982361999999966);
 INSERT INTO city (name, population2015, built_area) VALUES ('Puebla', 2290865.066294000018388, 315.977206000000024);
 INSERT INTO city (name, population2015, built_area) VALUES ('Vancouver', 2019424.629571000114083, 445.357655000000022);
 INSERT INTO city (name, population2015, built_area) VALUES ('Monterrey', 4230911.268055000342429, 443.294901999999979);
 INSERT INTO city (name, population2015, built_area) VALUES ('Denver', 2230487.980345000047237, 1019.263421999999991);
-INSERT INTO city (name, population2015, built_area) VALUES ('Guatemala City', 2671635.795388999860734, 188.403683000000001);
+INSERT INTO city (name, population2015, built_area) VALUES ('Guatemala CityLocation', 2671635.795388999860734, 188.403683000000001);
 INSERT INTO city (name, population2015, built_area) VALUES ('Houston', 4902555.284667000174522, 2520.668786000000182);
 INSERT INTO city (name, population2015, built_area) VALUES ('Dallas', 5195004.118898999877274, 2648.428097999999864);
 INSERT INTO city (name, population2015, built_area) VALUES ('Guayaquil', 2749343.410399999935180, 141.503914000000009);
@@ -97,7 +97,7 @@ INSERT INTO city (name, population2015, built_area) VALUES ('Addis Ababa', 38356
 INSERT INTO city (name, population2015, built_area) VALUES ('Dar es Salaam', 5344775.470395999960601, 267.675170999999978);
 INSERT INTO city (name, population2015, built_area) VALUES ('Baghdad', 5360188.009995999746025, 438.320747999999980);
 INSERT INTO city (name, population2015, built_area) VALUES ('Riyadh', 5669003.455221000127494, 640.278988000000027);
-INSERT INTO city (name, population2015, built_area) VALUES ('Kuwait City', 3171818.323323000222445, 307.478819999999985);
+INSERT INTO city (name, population2015, built_area) VALUES ('Kuwait CityLocation', 3171818.323323000222445, 307.478819999999985);
 INSERT INTO city (name, population2015, built_area) VALUES ('Tehran', 12493252.402972999960184, 686.499008000000003);
 INSERT INTO city (name, population2015, built_area) VALUES ('Antananarivo', 2148090.855975999962538, 62.905130999999997);
 INSERT INTO city (name, population2015, built_area) VALUES ('Isfahan', 2005664.221350000007078, 175.279957999999993);
@@ -163,7 +163,7 @@ INSERT INTO city (name, population2015, built_area) VALUES ('Dalian', 3386439.81
 INSERT INTO city (name, population2015, built_area) VALUES ('Wuhan', 7334684.489311000332236, 331.369892999999990);
 INSERT INTO city (name, population2015, built_area) VALUES ('Changsha', 3332149.775675000157207, 228.503172000000006);
 INSERT INTO city (name, population2015, built_area) VALUES ('Qingdao', 3613039.794416000135243, 392.082725999999980);
-INSERT INTO city (name, population2015, built_area) VALUES ('Ho Chi Minh City', 11508477.190380999818444, 629.123789999999985);
+INSERT INTO city (name, population2015, built_area) VALUES ('Ho Chi Minh CityLocation', 11508477.190380999818444, 629.123789999999985);
 INSERT INTO city (name, population2015, built_area) VALUES ('Jakarta', 36337673.964781999588013, 1912.097610000000032);
 INSERT INTO city (name, population2015, built_area) VALUES ('Hefei', 4004602.338521999772638, 283.841479999999990);
 INSERT INTO city (name, population2015, built_area) VALUES ('Nanchang', 2984996.947236000094563, 197.663495000000012);
@@ -187,11 +187,11 @@ INSERT INTO city (name, population2015, built_area) VALUES ('Taichung', 2224002.
 INSERT INTO city (name, population2015, built_area) VALUES ('New Taipei [Taipei]', 8871666.948852000758052, 380.771293000000014);
 INSERT INTO city (name, population2015, built_area) VALUES ('Kaohsiung', 2413425.651595999952406, 198.142685999999998);
 INSERT INTO city (name, population2015, built_area) VALUES ('Fukuoka', 2138385.721377000212669, 302.754439999999988);
-INSERT INTO city (name, population2015, built_area) VALUES ('Quezon City [Manila]', 21696970.690634999424219, 650.990724999999998);
+INSERT INTO city (name, population2015, built_area) VALUES ('Quezon CityLocation [Manila]', 21696970.690634999424219, 650.990724999999998);
 INSERT INTO city (name, population2015, built_area) VALUES ('Osaka [Kyoto]', 15696039.092454999685287, 2118.544768000000204);
 INSERT INTO city (name, population2015, built_area) VALUES ('Makassar', 2202527.445210000034422, 116.408396999999994);
 INSERT INTO city (name, population2015, built_area) VALUES ('Nagoya', 7665969.570712000131607, 1803.914379999999937);
 INSERT INTO city (name, population2015, built_area) VALUES ('Tokyo', 33204391.067703999578953, 3740.883518000000095);
-INSERT INTO city (name, population2015, built_area) VALUES ('Cebu City', 2678479.275710999965668, 99.791186999999994);
+INSERT INTO city (name, population2015, built_area) VALUES ('Cebu CityLocation', 2678479.275710999965668, 99.791186999999994);
 INSERT INTO city (name, population2015, built_area) VALUES ('Melbourne', 3468021.769435999915004, 1145.242218999999977);
 INSERT INTO city (name, population2015, built_area) VALUES ('Sydney', 3750253.310440999921411, 926.835645999999997);
