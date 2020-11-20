@@ -55,7 +55,7 @@ public class EBirdReader {
 	}
 
 	private void readingThread(final EBirdLocalityPredicate predicate, final EBirdErrorHandler errorHandler, final TsvParser parser) {
-		try (InputStream is = new BufferedInputStream(ebird)) {
+		try (InputStream is = new BufferedInputStream(ebird, 8192 * 16)) {
 			parser.iterate(is, "UTF-8").forEach(row -> {
 				final String localityId = row[23];
 				LOGGER.trace("Read ebird record for locality {} for record ID {}", localityId, row[0]);

@@ -53,10 +53,6 @@ public class Importer {
 				new ErrorHandler());
 	}
 	
-	public void shutdown() throws SQLException {
-		dataSource.close();
-	}
-	
 	private interface CityNameProvider {
 		List<CityLocation> getCityLocations(String localityId);
 	}

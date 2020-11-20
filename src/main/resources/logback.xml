@@ -36,17 +36,15 @@
         </encoder>
     </appender>
 
-    <logger name="ebird2postgres" level="TRACE">
-            <appender-ref ref="FILE" />
-    </logger>
-
     <logger name="ebird2postgres" level="ERROR">
         <appender-ref ref="ERROR_FILE" />
     </logger>
 
-    <logger name="ch.qos.logback" level="ERROR" />
+    <logger name="ebird2postgres" level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </logger>
 
-    <root level="INFO">
-        <appender-ref ref="STDOUT" />
+    <root level="TRACE">
+        <appender-ref ref="FILE" />
     </root>
 </configuration>

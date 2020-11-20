@@ -52,7 +52,6 @@ public class Application {
                 final InputStream eBirdInput = client.files().download(ebirdFile.get().getPathLower()).getInputStream();
                 final Importer importer = new Importer(eBirdInput);
                 importer.importUrbanHotspots();
-                importer.shutdown();
             }
 
         } catch (ParseException e) {
