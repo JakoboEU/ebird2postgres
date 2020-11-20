@@ -8,16 +8,12 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
 import ebird2postgres.ebird.EBirdRecord;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ChecklistRepository {
-	private final static Logger LOGGER = LoggerFactory.getLogger(ChecklistRepository.class);
 
 	private final Cache<String, Checklist> cache = CacheBuilder
 			.newBuilder()
 			.maximumSize(2000)
-			.removalListener(n -> LOGGER.trace("Removing {} from cache", n.getKey()))
 			. <String, Checklist> build();
 
 	public Checklist fetchChecklist(final Connection connection, final EBirdRecord ebirdRecord, final Hotspot hotspot) throws ExecutionException {

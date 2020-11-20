@@ -49,10 +49,9 @@ public class Application {
                 client.files().listFolder("").getEntries().forEach(metadata -> System.out.println("- " + metadata.getName()));
             } else {
                 LOGGER.info("Reading file: " + ebirdFile.get().getPathLower());
-                final Importer importer = new Importer(new DropboxInputStream(client, ebirdFile.get().getPathLower(), 8192 * 256));
+                final Importer importer = new Importer(new DropboxInputStream(client, ebirdFile.get().getPathLower(), 8192 * 128));
                 importer.importUrbanHotspots();
             }
-
         } catch (ParseException e) {
             System.out.println(e.getMessage());
             HelpFormatter formatter = new HelpFormatter();
