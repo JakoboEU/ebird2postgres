@@ -1,5 +1,6 @@
 package ebird2postgres;
 
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
@@ -27,8 +28,8 @@ public class Importer {
 	private final UrbanHotspots urbanHotspots = UrbanHotspots.urbanHotspots();
 	private EBirdReader reader;
 	
-	public Importer(final String filename) throws Exception {
-		reader = new EBirdReader(filename);
+	public Importer(final InputStream eBird) throws Exception {
+		reader = new EBirdReader(eBird);
 	}
 	
 	public void importUrbanHotspots() {
@@ -42,17 +43,6 @@ public class Importer {
 	
 	public void shutdown() throws SQLException {
 		repositoryFactory.shutdown();
-	}
-	
-	public static void main(String[] args) throws Exception {
-		if (args.length != 1) {
-			System.out.println("EBird tsv must be specified as argument");
-			System.exit(-1);
-		}
-
-		final Importer importer = new Importer(args[0]);
-		importer.importUrbanHotspots();
-		importer.shutdown();
 	}
 	
 	private interface CityNameProvider {

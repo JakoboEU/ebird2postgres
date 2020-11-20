@@ -15,10 +15,10 @@ public class EBirdReader {
 	
 	private final AtomicReference<String> lastRowRead = new AtomicReference<String>();
 
-	private final String ebirdFileName;
+	private final InputStream ebird;
 	
-	public EBirdReader(final String ebirdFileName) {
-		this.ebirdFileName = ebirdFileName;
+	public EBirdReader(final InputStream ebird) {
+		this.ebird = ebird;
 	}
 	
 	public void read(final EBirdLocalityPredicate predicate, final EBirdRecordHandler recordHandler, final EBirdErrorHandler errorHandler) {
@@ -26,7 +26,7 @@ public class EBirdReader {
 		settings.setHeaderExtractionEnabled(true);
 		TsvParser parser = new TsvParser(settings);
 		
-		try (InputStream is = new BufferedInputStream(new FileInputStream(new File(ebirdFileName)))) {
+		try (InputStream is = new BufferedInputStream(ebird)) {
 			parser.iterate(is, "UTF-8").forEach(row -> handleRow(row, predicate, recordHandler, errorHandler));
 		} catch (IOException e) {
 			errorHandler.handleError(lastRowRead.get(), null, e);
@@ -45,11 +45,5 @@ public class EBirdReader {
 				errorHandler.handleError(previousRow, row, e);
 			}
 		}
-	}
-	
-	public static void main(final String[] args) {
-		final EBirdReader eb = new EBirdReader("/Users/jamesr/Dropbox/PhD/eBird/ebd_relAug-2020.txt");
-		
-		eb.read(e -> true, e -> System.out.println(e), (a, row, t) -> {System.out.println(Arrays.toString(row)); t.printStackTrace();});
 	}
 }
