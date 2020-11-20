@@ -24,7 +24,7 @@ public class EBirdReader {
 
 	private final InputStream ebird;
 
-	private final BlockingQueue<String[]> queue = new LinkedBlockingDeque<>(MAX_QUEUE_SIZE);
+	private final BlockingQueue<EBirdRecord> queue = new LinkedBlockingDeque<>(MAX_QUEUE_SIZE);
 
 	private final ExecutorService executorService = Executors.newFixedThreadPool(3);
 
@@ -33,52 +33,63 @@ public class EBirdReader {
 	}
 	
 	public void read(final EBirdLocalityPredicate predicate, final EBirdRecordHandler recordHandler, final EBirdErrorHandler errorHandler) {
-		startReading(errorHandler);
-		startWriting(predicate, recordHandler, errorHandler);
+		startReading(predicate, errorHandler);
+		startWriting(recordHandler, errorHandler);
 	}
 
-	private void startReading(final EBirdErrorHandler errorHandler) {
+	private void startReading(final EBirdLocalityPredicate predicate, final EBirdErrorHandler errorHandler) {
 		TsvParserSettings settings = new TsvParserSettings();
 		settings.setHeaderExtractionEnabled(true);
 		TsvParser parser = new TsvParser(settings);
 
 		executorService.submit(() -> {
-			try (InputStream is = new BufferedInputStream(ebird)) {
-				parser.iterate(is, "UTF-8").forEach(row -> {
-					try {
-						queue.put(row);
-					} catch (InterruptedException e) {
-						errorHandler.handleError(lastRowRead.get(), row, e);
-					}
-				});
-			} catch (IOException e) {
-				errorHandler.handleError(lastRowRead.get(), null, e);
-			}
-			System.out.println("Finished reading file.");
+			readingThread(predicate, errorHandler, parser);
 		});
 	}
 
-	private void startWriting(final EBirdLocalityPredicate predicate, final EBirdRecordHandler recordHandler, final EBirdErrorHandler errorHandler) {
+	private void startWriting(final EBirdRecordHandler recordHandler, final EBirdErrorHandler errorHandler) {
 		executorService.submit(() -> {
+			writingThread(recordHandler, errorHandler);
+		});
+	}
+
+	private void readingThread(final EBirdLocalityPredicate predicate, final EBirdErrorHandler errorHandler, final TsvParser parser) {
+		try (InputStream is = new BufferedInputStream(ebird)) {
+			parser.iterate(is, "UTF-8").forEach(row -> {
+				final String localityId = row[23];
+				if (predicate.accept(localityId)) {
+					try {
+						queue.put(new EBirdRecord(row));
+					} catch (Exception e) {
+						errorHandler.handleError(lastRowRead.get(), row, e);
+					}
+				}
+			});
+		} catch (IOException e) {
+			errorHandler.handleError(lastRowRead.get(), null, e);
+		}
+		System.out.println("Finished reading file.");
+	}
+
+	private void writingThread(EBirdRecordHandler recordHandler, EBirdErrorHandler errorHandler) {
+		int retryCount = 0;
+		while (retryCount < 10) {
+			while (!queue.isEmpty()) {
+				retryCount = 0;
+				try {
+					recordHandler.handle(queue.take());
+				} catch (InterruptedException e) {
+					errorHandler.handleError(lastRowRead.get(), null, e);
+				}
+			}
+
+			retryCount++;
 			try {
-				handleRow(queue.take(), predicate, recordHandler, errorHandler);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				errorHandler.handleError(lastRowRead.get(), null, e);
 			}
-		});
-	}
-
-	private void handleRow(final String[] row, final EBirdLocalityPredicate predicate, final EBirdRecordHandler recordHandler, final EBirdErrorHandler errorHandler) {
-		final String previousRow = lastRowRead.getAndSet(row[0]);
-		
-		final String localityId = row[23];
-		
-		if (predicate.accept(localityId)) {
-			try {
-				recordHandler.handle(new EBirdRecord(row));
-			} catch (Exception e) {
-				errorHandler.handleError(previousRow, row, e);
-			}
 		}
+		System.out.println("Finished reading from queue.");
 	}
 }
