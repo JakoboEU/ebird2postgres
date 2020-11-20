@@ -71,12 +71,13 @@ public class Importer {
 		@Override
 		public void handle(EBirdRecord record) {
 			try (final Connection connection = dataSource.getConnection()) {
+				LOGGER.debug("Storing new record {}", record.getId());
+
 				final List<CityLocation> cityLocations = cityNameProvider.getCityLocations(record.getLocalityId());
 				final Hotspot hotspot = hotspotRepo.fetchHotspot(connection, record, cityLocations);
 				final Checklist checklist = checklistRepo.fetchChecklist(connection, record, hotspot);
 				final BirdSpecies birdSpecies = birdSpeciesRepo.fetchBirdSpecies(connection, record);
 
-				LOGGER.debug("Storing new record {}", record.getId());
 				observationRepo.store(connection, record, checklist, birdSpecies);
 
 				connection.commit();

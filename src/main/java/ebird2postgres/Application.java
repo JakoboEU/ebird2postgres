@@ -3,6 +3,7 @@ package ebird2postgres;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.Metadata;
+import ebird2postgres.dropbox.DropboxInputStream;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
@@ -12,7 +13,6 @@ import org.apache.commons.cli.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.InputStream;
 import java.util.Optional;
 
 public class Application {
@@ -49,8 +49,7 @@ public class Application {
                 client.files().listFolder("").getEntries().forEach(metadata -> System.out.println("- " + metadata.getName()));
             } else {
                 LOGGER.info("Reading file: " + ebirdFile.get().getPathLower());
-                final InputStream eBirdInput = client.files().download(ebirdFile.get().getPathLower()).getInputStream();
-                final Importer importer = new Importer(eBirdInput);
+                final Importer importer = new Importer(new DropboxInputStream(client, ebirdFile.get().getPathLower(), 8192 * 256));
                 importer.importUrbanHotspots();
             }
 

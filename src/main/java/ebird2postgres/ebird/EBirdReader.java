@@ -58,10 +58,9 @@ public class EBirdReader {
 		try (InputStream is = new BufferedInputStream(ebird, 8192 * 16)) {
 			parser.iterate(is, "UTF-8").forEach(row -> {
 				final String localityId = row[23];
-				LOGGER.trace("Read ebird record for locality {} for record ID {}", localityId, row[0]);
 				if (predicate.accept(localityId)) {
 					try {
-						LOGGER.trace("Added record to queue.");
+						LOGGER.trace("Added record {} to queue.", row[0]);
 						queue.put(new EBirdRecord(row));
 					} catch (Exception e) {
 						errorHandler.handleError(lastRowRead.get(), row, e);
@@ -91,7 +90,7 @@ public class EBirdReader {
 
 			retryCount++;
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(retryCount * 1000);
 			} catch (InterruptedException e) {
 				errorHandler.handleError(lastRowRead.get(), null, e);
 			}
