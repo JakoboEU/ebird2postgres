@@ -13,18 +13,12 @@ public class ChecklistRepository {
 
 	private final Cache<String, Checklist> cache = CacheBuilder
 			.newBuilder().maximumSize(2000). <String, Checklist> build();
-    
-	private final Connection connection;
-	
-	public ChecklistRepository(final Connection connection) {
-		this.connection = connection;
-	}
 
-	public Checklist fetchChecklist(final EBirdRecord ebirdRecord, final Hotspot hotspot) throws ExecutionException {
-		return cache.get(ebirdRecord.getChecklistId(), () -> loadChecklist(ebirdRecord, hotspot));
+	public Checklist fetchChecklist(final Connection connection, final EBirdRecord ebirdRecord, final Hotspot hotspot) throws ExecutionException {
+		return cache.get(ebirdRecord.getChecklistId(), () -> loadChecklist(connection, ebirdRecord, hotspot));
 	}
 	
-	private Checklist loadChecklist(final EBirdRecord ebirdRecord, final Hotspot hotspot) throws SQLException {
+	private Checklist loadChecklist(final Connection connection, final EBirdRecord ebirdRecord, final Hotspot hotspot) throws SQLException {
 		return Checklist.load(connection, ebirdRecord.getChecklistId())
 				.orElseGet(() -> {
 					try {

@@ -8,13 +8,8 @@ import java.sql.SQLException;
 import ebird2postgres.ebird.EBirdRecord;
 
 public class ObservationRepository {
-	private final Connection connection;
-	
-	public ObservationRepository(Connection connection) {
-		this.connection = connection;
-	}
 
-	public void store(final EBirdRecord record, final Checklist checklist, final BirdSpecies birdSpecies) throws SQLException {
+	public void store(final Connection connection, final EBirdRecord record, final Checklist checklist, final BirdSpecies birdSpecies) throws SQLException {
 		try (final PreparedStatement ps = connection.prepareStatement("SELECT id FROM observation WHERE id = ?")) {
 			ps.setString(1, record.getId());
 			final ResultSet rs = ps.executeQuery();

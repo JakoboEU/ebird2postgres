@@ -1,6 +1,7 @@
 package ebird2postgres;
 
 import java.io.InputStream;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
@@ -18,18 +19,24 @@ import ebird2postgres.repository.CityLocation;
 import ebird2postgres.repository.Hotspot;
 import ebird2postgres.repository.HotspotRepository;
 import ebird2postgres.repository.ObservationRepository;
-import ebird2postgres.repository.RepositoryFactory;
+import org.apache.commons.dbcp2.BasicDataSource;
 
 import static java.util.Collections.singletonList;
 
 public class Importer {
-
-	private final RepositoryFactory repositoryFactory = new RepositoryFactory();
 	private final UrbanHotspots urbanHotspots = UrbanHotspots.urbanHotspots();
+	private final BasicDataSource dataSource;
+
 	private EBirdReader reader;
 	
 	public Importer(final InputStream eBird) throws Exception {
 		reader = new EBirdReader(eBird);
+
+		dataSource = new BasicDataSource();
+		dataSource.setDriverClassName("org.postgresql.Driver");
+		dataSource.setUrl("jdbc:postgresql://localhost/urban_ebird");
+		dataSource.setDefaultAutoCommit(false);
+		dataSource.setRollbackOnReturn(true);
 	}
 	
 	public void importUrbanHotspots() {
@@ -42,7 +49,7 @@ public class Importer {
 	}
 	
 	public void shutdown() throws SQLException {
-		repositoryFactory.shutdown();
+		dataSource.close();
 	}
 	
 	private interface CityNameProvider {
@@ -51,10 +58,10 @@ public class Importer {
 	
 	private class RecordHandler implements EBirdRecordHandler {
 
-		private final BirdSpeciesRepository birdSpeciesRepo = repositoryFactory.birdSpeciesRepository();
-		private final ChecklistRepository checklistRepo = repositoryFactory.checklistRepository();
-		private final HotspotRepository hotspotRepo = repositoryFactory.hotsportRepository();
-		private final ObservationRepository observationRepo = repositoryFactory.observationRepository();
+		private final BirdSpeciesRepository birdSpeciesRepo = new BirdSpeciesRepository();
+		private final ChecklistRepository checklistRepo =  new ChecklistRepository();
+		private final HotspotRepository hotspotRepo = new HotspotRepository();
+		private final ObservationRepository observationRepo = new ObservationRepository();
 		private final CityNameProvider cityNameProvider;
 		
 		RecordHandler(final CityNameProvider cityNameProvider) {
@@ -63,22 +70,16 @@ public class Importer {
 		
 		@Override
 		public void handle(EBirdRecord record) {
-			try {
+			try (final Connection connection = dataSource.getConnection()) {
 				final List<CityLocation> cityLocations = cityNameProvider.getCityLocations(record.getLocalityId());
-				final Hotspot hotspot = hotspotRepo.fetchHotspot(record, cityLocations);
-				final Checklist checklist = checklistRepo.fetchChecklist(record, hotspot);
-				final BirdSpecies birdSpecies = birdSpeciesRepo.fetchBirdSpecies(record);
+				final Hotspot hotspot = hotspotRepo.fetchHotspot(connection, record, cityLocations);
+				final Checklist checklist = checklistRepo.fetchChecklist(connection, record, hotspot);
+				final BirdSpecies birdSpecies = birdSpeciesRepo.fetchBirdSpecies(connection, record);
 				
-				observationRepo.store(record, checklist, birdSpecies);
-				
-				repositoryFactory.commit();
+				observationRepo.store(connection, record, checklist, birdSpecies);
+
+				connection.commit();
 			} catch (Exception e) {
-				try {
-					repositoryFactory.rollback();
-				} catch (SQLException rollbackError) {
-					System.err.println("Failed to rollback transaction");
-					rollbackError.printStackTrace();
-				}
 				throw new IllegalStateException("Failed to create entries from " + record, e);
 			}
 		}

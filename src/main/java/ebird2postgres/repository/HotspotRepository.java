@@ -14,19 +14,12 @@ public class HotspotRepository {
 
 	private final Cache<String, Hotspot> cache = CacheBuilder
 			.newBuilder().maximumSize(2000). <String, Hotspot> build();
-    
-	private final Connection connection;
-	
-	
-	public HotspotRepository(final Connection connection) {
-		this.connection = connection;
-	}
 
-	public Hotspot fetchHotspot(final EBirdRecord ebirdRecord, final List<CityLocation> cityLocations) throws ExecutionException {
-		return cache.get(ebirdRecord.getLocalityId(), () -> loadHotspot(ebirdRecord, cityLocations));
+	public Hotspot fetchHotspot(final Connection connection, final EBirdRecord ebirdRecord, final List<CityLocation> cityLocations) throws ExecutionException {
+		return cache.get(ebirdRecord.getLocalityId(), () -> loadHotspot(connection, ebirdRecord, cityLocations));
 	}
 	
-	private Hotspot loadHotspot(final EBirdRecord ebirdRecord, final List<CityLocation> cityLocations) throws SQLException {
+	private Hotspot loadHotspot(final Connection connection, final EBirdRecord ebirdRecord, final List<CityLocation> cityLocations) throws SQLException {
 		return Hotspot.load(connection, ebirdRecord.getLocalityId())
 				.orElseGet(() -> {
 					try {

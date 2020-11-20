@@ -4,6 +4,12 @@ plugins {
 	id 'eclipse'
 }
 
+java {
+	toolchain {
+		languageVersion = 11
+	}
+}
+
 repositories {
 	mavenCentral()
     jcenter()
@@ -16,4 +22,6 @@ dependencies {
 	implementation 'org.postgresql:postgresql:42.2.18.jre7'
 	implementation 'com.dropbox.core:dropbox-core-sdk:3.1.5'
 	implementation 'commons-cli:commons-cli:1.4'
+	implementation 'org.apache.commons:commons-dbcp2:2.8.0'
+
 }
