@@ -9,11 +9,15 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.util.Optional;
 
 public class Application {
+
+    private final static Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
     private final static Options COMMAND_LINE_OPTIONS = new Options();
 
@@ -41,10 +45,10 @@ public class Application {
             ).findFirst();
 
             if (!ebirdFile.isPresent()) {
-                System.out.println("Could not find ebird file in Dropbox App folder with name '"  + eBirdFilename + "'. Found:");
+                LOGGER.error("Could not find ebird file in Dropbox App folder with name '"  + eBirdFilename + "'. Found:");
                 client.files().listFolder("").getEntries().forEach(metadata -> System.out.println("- " + metadata.getName()));
             } else {
-                System.out.println("Reading file: " + ebirdFile.get().getPathLower());
+                LOGGER.info("Reading file: " + ebirdFile.get().getPathLower());
                 final InputStream eBirdInput = client.files().download(ebirdFile.get().getPathLower()).getInputStream();
                 final Importer importer = new Importer(eBirdInput);
                 importer.importUrbanHotspots();

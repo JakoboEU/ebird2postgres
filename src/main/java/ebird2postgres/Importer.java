@@ -20,10 +20,14 @@ import ebird2postgres.repository.Hotspot;
 import ebird2postgres.repository.HotspotRepository;
 import ebird2postgres.repository.ObservationRepository;
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static java.util.Collections.singletonList;
 
 public class Importer {
+	private final static Logger LOGGER = LoggerFactory.getLogger(Importer.class);
+
 	private final UrbanHotspots urbanHotspots = UrbanHotspots.urbanHotspots();
 	private final BasicDataSource dataSource;
 
@@ -40,6 +44,7 @@ public class Importer {
 	}
 	
 	public void importUrbanHotspots() {
+		LOGGER.info("Reading in urban hotspots");
 		final CityNameProvider urbanLocationProvider =
 				localityId -> singletonList(new CityLocation(urbanHotspots.getCityName(localityId).get(), true));
 
@@ -75,7 +80,8 @@ public class Importer {
 				final Hotspot hotspot = hotspotRepo.fetchHotspot(connection, record, cityLocations);
 				final Checklist checklist = checklistRepo.fetchChecklist(connection, record, hotspot);
 				final BirdSpecies birdSpecies = birdSpeciesRepo.fetchBirdSpecies(connection, record);
-				
+
+				LOGGER.debug("Storing new record {}", record.getId());
 				observationRepo.store(connection, record, checklist, birdSpecies);
 
 				connection.commit();
@@ -90,12 +96,12 @@ public class Importer {
 		@Override
 		public void handleError(String lastRowRead, String[] currentRow, Exception error) {
 			if (currentRow == null) {
-				System.err.println("IO Error after reading row " + lastRowRead);
+				LOGGER.error("IO Error after reading row {}", lastRowRead);
 			} else {
-				System.err.println("Failed to process row " + Arrays.toString(currentRow));
+				LOGGER.error("Failed to process row {}", Arrays.toString(currentRow));
 			}
-			
-			error.printStackTrace();
+
+			LOGGER.error("Error processing row", error);
 		}
 	}
 }

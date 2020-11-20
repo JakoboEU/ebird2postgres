@@ -1,0 +1,1536 @@
+2020-11-20 11:57:42,914 23152 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:42,922 23160 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS907272133, commonName=Common Chaffinch, scientificName=Fringilla coelebs, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=ES, stateCode=ES-MD, countyCode=null, localityId=L2722364, localityName=Casa de Campo, Madrid, latitude=40.4229058, longitude=-3.7466812, observationDate=1985-06-10, startTime=null, checklistId=S68123212, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,463 31701 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,464 31702 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS720387912, commonName=Azure-winged Magpie, scientificName=Cyanopica cyanus, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=TW, stateCode=TW-TPE, countyCode=null, localityId=L2319930, localityName=台北--大安森林公園(Taipei--Da'an Forest Park), latitude=25.0299282, longitude=121.5361476, observationDate=1999-06-20, startTime=06:30, checklistId=S53505296, protocolType=Historical, protocolCode=P62, duration=135, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,467 31705 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,468 31706 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS404464746, commonName=American Redstart, scientificName=Setophaga ruticilla, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L161180, localityName=Montrose Point, Lincoln Park, Chicago, latitude=41.9633833, longitude=-87.6344204, observationDate=1998-05-30, startTime=null, checklistId=S29748206, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,470 31708 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,470 31708 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS881338985, commonName=White-bellied Erpornis, scientificName=Erpornis zantholeuca, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=NP, stateCode=NP-1, countyCode=NP-1-KAT, localityId=L3877256, localityName=Gokarna Forest Reserve, latitude=27.7281341, longitude=85.3921795, observationDate=1989-03-01, startTime=null, checklistId=S66024882, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,471 31709 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,471 31709 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS434385365, commonName=American Goldfinch, scientificName=Spinus tristis, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=14, countryCode=CA, stateCode=CA-QC, countyCode=CA-QC-MR, localityId=L2386866, localityName=PN de la Pte-aux-Prairies--Secteur Bois-de-la-Réparation, latitude=45.6689243, longitude=-73.5132149, observationDate=1973-10-01, startTime=08:30, checklistId=S31910953, protocolType=Traveling, protocolCode=P22, duration=180, effortDistanceKm=2.7, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,472 31710 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,473 31711 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS205390860, commonName=Common Loon, scientificName=Gavia immer, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=CA, stateCode=CA-ON, countyCode=CA-ON-HA, localityId=L457200, localityName=Hamilton--Van Wagners Beach, latitude=43.2592372, longitude=-79.7648245, observationDate=1956-09-09, startTime=null, checklistId=S14704009, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,474 31712 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,475 31713 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS805535637, commonName=Savannah Sparrow, scientificName=Passerculus sandwichensis, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=10, countryCode=US, stateCode=US-WA, countyCode=US-WA-033, localityId=L162766, localityName=Union Bay Natural Area/Montlake Fill, latitude=47.65424, longitude=-122.29137, observationDate=1991-06-30, startTime=09:30, checklistId=S59808605, protocolType=Traveling, protocolCode=P22, duration=90, effortDistanceKm=1.609, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,477 31715 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,478 31716 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS348798720, commonName=Common Yellowthroat, scientificName=Geothlypis trichas, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-CA, countyCode=US-CA-075, localityId=L370768, localityName=Golden Gate Park--North Lake, latitude=37.7700193, longitude=-122.5028801, observationDate=1998-12-13, startTime=null, checklistId=S25476276, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=0.805, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,479 31717 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,480 31718 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS228265631, commonName=Australian Reed Warbler, scientificName=Acrocephalus australis, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=AU, stateCode=AU-VIC, countyCode=AU-VIC-KIN, localityId=L2300526, localityName=Edithvale-Seaford Wetlands--Edithvale, latitude=-38.034166, longitude=145.125103, observationDate=1993-01-16, startTime=null, checklistId=S16709982, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,480 31718 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,481 31719 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS927411332, commonName=Cooper's Hawk, scientificName=Accipiter cooperii, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-NJ, countyCode=US-NJ-005, localityId=L160720, localityName=Palmyra Cove Nature Park, latitude=40.002445, longitude=-75.045456, observationDate=1993-08-07, startTime=null, checklistId=S69368990, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,481 31719 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,481 31719 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS33053503, commonName=American Wigeon, scientificName=Mareca americana, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=CA, stateCode=CA-BC, countyCode=CA-BC-GV, localityId=L275701, localityName=Stanley Park, latitude=49.3029688, longitude=-123.1432629, observationDate=1984-12-08, startTime=null, checklistId=S2411622, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,482 31720 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,483 31721 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS422936657, commonName=Double-crested Cormorant, scientificName=Phalacrocorax auritus, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=CA, stateCode=CA-QC, countyCode=CA-QC-MR, localityId=L351551, localityName=Parc des Rapides, latitude=45.4277985, longitude=-73.5921872, observationDate=1992-09-05, startTime=null, checklistId=S31063376, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=4, isComplete=true, groupId=G1880533, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,483 31721 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,484 31722 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS648709614, commonName=Eurasian Coot, scientificName=Fulica atra, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=AU, stateCode=AU-VIC, countyCode=AU-VIC-MEL, localityId=L919153, localityName=Royal Botanic Gardens Melbourne, latitude=-37.8297966, longitude=144.9805232, observationDate=1986-01-15, startTime=11:00, checklistId=S47871048, protocolType=Traveling, protocolCode=P22, duration=240, effortDistanceKm=3.219, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,485 31723 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,485 31723 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS392545315, commonName=Chipping Sparrow, scientificName=Spizella passerina, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-NJ, countyCode=US-NJ-031, localityId=L209818, localityName=Garret Mountain Reservation (Park), latitude=40.8995168, longitude=-74.1791808, observationDate=1997-04-06, startTime=null, checklistId=S29033305, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,486 31724 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,486 31724 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS147108718, commonName=Canada Goose, scientificName=Branta canadensis, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-NY, countyCode=US-NY-103, localityId=L279859, localityName=Swan Lake, East Patchogue, latitude=40.770108, longitude=-72.9932633, observationDate=1999-01-17, startTime=10:00, checklistId=S10358914, protocolType=Traveling, protocolCode=P22, duration=45, effortDistanceKm=0.805, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,487 31725 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,487 31725 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS628667648, commonName=Northern Mockingbird, scientificName=Mimus polyglottos, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-MA, countyCode=US-MA-009, localityId=L594125, localityName=Marblehead Neck Wildlife Sanctuary (Mass Audubon), latitude=42.4930171, longitude=-70.8401871, observationDate=1984-09-14, startTime=07:00, checklistId=S46372660, protocolType=Historical, protocolCode=P62, duration=150, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,488 31726 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,488 31726 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS117985503, commonName=Blackpoll Warbler, scientificName=Setophaga striata, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-NY, countyCode=US-NY-081, localityId=L274774, localityName=Forest Park, latitude=40.7013226, longitude=-73.8513368, observationDate=1981-05-23, startTime=null, checklistId=S8218109, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,489 31727 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,489 31727 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS215330625, commonName=Carolina Wren, scientificName=Thryothorus ludovicianus, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-VA, countyCode=US-VA-013, localityId=L718577, localityName=Long Branch Nature Center & Park, latitude=38.86, longitude=-77.1221, observationDate=1982-09-21, startTime=null, checklistId=S15491487, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,490 31728 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,490 31728 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS342561388, commonName=Canada Goose, scientificName=Branta canadensis, subspeciesCommonName=Canada Goose (moffitti/maxima), subspeciesScientificName=Branta canadensis moffitti/maxima, observationCount=21, countryCode=US, stateCode=US-WA, countyCode=US-WA-033, localityId=L283821, localityName=Cedar River mouth, latitude=47.5007162, longitude=-122.2146012, observationDate=1996-09-01, startTime=11:00, checklistId=S25049280, protocolType=Traveling, protocolCode=P22, duration=60, effortDistanceKm=0.161, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,491 31729 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,491 31729 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS334510912, commonName=Wood Duck, scientificName=Aix sponsa, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=10, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L164437, localityName=McGinnis Slough Forest Preserve, latitude=41.642044, longitude=-87.86811, observationDate=1978-08-27, startTime=null, checklistId=S24469727, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=0.0, effortAreaHa=0.0, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,492 31730 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,492 31730 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS64724645, commonName=Chestnut-sided Warbler, scientificName=Setophaga pensylvanica, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-MI, countyCode=US-MI-099, localityId=L388494, localityName=Lake St. Clair Metropark (Metro Beach Metropark), latitude=42.5796301, longitude=-82.8032684, observationDate=1991-09-14, startTime=null, checklistId=S4651862, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,493 31731 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,494 31732 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS166493875, commonName=Virginia Rail, scientificName=Rallus limicola, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L130994, localityName=Eggers Grove Forest Preserve (Chicago), latitude=41.6878052, longitude=-87.5272446, observationDate=1967-05-07, startTime=08:00, checklistId=S11791138, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=34, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,494 31732 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,495 31733 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS367093833, commonName=Bufflehead, scientificName=Bucephala albeola, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=8, countryCode=US, stateCode=US-MA, countyCode=US-MA-017, localityId=L835248, localityName=Newton City Hall, latitude=42.337325, longitude=-71.2076658, observationDate=1995-04-19, startTime=null, checklistId=S26990422, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,495 31733 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,496 31734 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS467247184, commonName=Northern Flicker, scientificName=Colaptes auratus, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=26, countryCode=CA, stateCode=CA-QC, countyCode=CA-QC-MR, localityId=L165056, localityName=Jardin botanique de Montréal (accès restreint), latitude=45.5596562, longitude=-73.5626078, observationDate=1989-09-22, startTime=null, checklistId=S34503526, protocolType=Historical, protocolCode=P62, duration=100, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,496 31734 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,497 31735 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS216215470, commonName=Song Sparrow, scientificName=Melospiza melodia, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-VA, countyCode=US-VA-059, localityId=L159300, localityName=Dyke Marsh Wildlife Preserve, latitude=38.7695, longitude=-77.0494, observationDate=1983-04-30, startTime=null, checklistId=S15556847, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,497 31735 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,498 31736 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS73018078, commonName=American Crow, scientificName=Corvus brachyrhynchos, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-CA, countyCode=US-CA-037, localityId=L380940, localityName=Hollywood Reservoir, latitude=34.1206159, longitude=-118.3323669, observationDate=1993-03-15, startTime=07:50, checklistId=S5188805, protocolType=Area, protocolCode=P23, duration=80, effortDistanceKm=null, effortAreaHa=5.0, numberOfObservers=1, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,498 31736 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,499 31737 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS608816367, commonName=Blue-gray Gnatcatcher, scientificName=Polioptila caerulea, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=2, countryCode=US, stateCode=US-CA, countyCode=US-CA-059, localityId=L109451, localityName=Huntington Central Park, latitude=33.7010644, longitude=-118.006382, observationDate=1987-08-22, startTime=07:00, checklistId=S45156243, protocolType=Historical, protocolCode=P62, duration=120, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=4, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,499 31737 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,499 31737 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS404618342, commonName=Swainson's Thrush, scientificName=Catharus ustulatus, subspeciesCommonName=Swainson's Thrush (Olive-backed), subspeciesScientificName=Catharus ustulatus [swainsoni Group], observationCount=1, countryCode=CA, stateCode=CA-ON, countyCode=CA-ON-TO, localityId=L285222, localityName=Toronto--Ashbridge's Bay Park, latitude=43.6599861, longitude=-79.3093553, observationDate=1923-09-12, startTime=16:00, checklistId=S29757329, protocolType=Historical, protocolCode=P62, duration=120, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,500 31738 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,500 31738 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS380170629, commonName=Gadwall, scientificName=Mareca strepera, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=40, countryCode=US, stateCode=US-CA, countyCode=US-CA-073, localityId=L820619, localityName=Buena Vista Lagoon--Jefferson St. overlook (west of I-5), latitude=33.1701387, longitude=-117.3491442, observationDate=1999-12-29, startTime=06:30, checklistId=S28070397, protocolType=Traveling, protocolCode=P22, duration=90, effortDistanceKm=1.609, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,501 31739 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,501 31739 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS429819887, commonName=European Starling, scientificName=Sturnus vulgaris, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=5, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L130994, localityName=Eggers Grove Forest Preserve (Chicago), latitude=41.6878052, longitude=-87.5272446, observationDate=1977-05-15, startTime=08:00, checklistId=S31579337, protocolType=Historical, protocolCode=P62, duration=240, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,502 31740 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,502 31740 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS512519586, commonName=Brown Thrasher, scientificName=Toxostoma rufum, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-NY, countyCode=US-NY-081, localityId=L165143, localityName=Jamaica Bay Wildlife Refuge, latitude=40.6170296, longitude=-73.8244561, observationDate=1974-07-28, startTime=null, checklistId=S37694674, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,502 31740 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,503 31741 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS535652782, commonName=Yellow Warbler, scientificName=Setophaga petechia, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-NJ, countyCode=US-NJ-003, localityId=L2190730, localityName=Franklin Lakes Nature Preserve, latitude=40.982996, longitude=-74.198663, observationDate=1957-05-04, startTime=10:30, checklistId=S39378905, protocolType=Stationary, protocolCode=P21, duration=90, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=3, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,503 31741 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,504 31742 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS180950016, commonName=Chimney Swift, scientificName=Chaetura pelagica, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-NJ, countyCode=US-NJ-017, localityId=L319287, localityName=Meadowlands IBA--Kearny Marsh, latitude=40.7602209, longitude=-74.1326919, observationDate=1981-06-07, startTime=09:45, checklistId=S12957570, protocolType=Traveling, protocolCode=P22, duration=135, effortDistanceKm=1.609, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,504 31742 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,505 31743 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS46063819, commonName=Black-bellied Plover, scientificName=Pluvialis squatarola, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=302, countryCode=US, stateCode=US-NY, countyCode=US-NY-081, localityId=L165143, localityName=Jamaica Bay Wildlife Refuge, latitude=40.6170296, longitude=-73.8244561, observationDate=1984-08-11, startTime=null, checklistId=S3349579, protocolType=International Shorebird Survey (ISS), protocolCode=P74, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,505 31743 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,506 31744 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS475619898, commonName=Golden-crowned Kinglet, scientificName=Regulus satrapa, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=CA, stateCode=CA-ON, countyCode=CA-ON-TO, localityId=L3063131, localityName=Toronto--Cedarvale Park, latitude=43.6908623, longitude=-79.4290495, observationDate=1945-04-29, startTime=08:30, checklistId=S35199056, protocolType=Historical, protocolCode=P62, duration=180, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,506 31744 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,506 31744 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS21895902, commonName=American Woodcock, scientificName=Scolopax minor, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=2, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L108460, localityName=Douglas Park, Chicago, latitude=41.8633213, longitude=-87.6991556, observationDate=1990-06-06, startTime=null, checklistId=S1655495, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=null, recordApproved=true, approvalReason=1]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,507 31745 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,507 31745 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS332081522, commonName=Ring-billed Gull, scientificName=Larus delawarensis, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-NJ, countyCode=US-NJ-027, localityId=L2096472, localityName=Lincoln Park Gravel Pits, latitude=40.9380259, longitude=-74.2917824, observationDate=1981-10-17, startTime=null, checklistId=S24289059, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=13, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,508 31746 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,508 31746 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS870041343, commonName=American Goldfinch, scientificName=Spinus tristis, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-IL, countyCode=US-IL-043, localityId=L633350, localityName=Morton Arboretum--West Side, latitude=41.8160414, longitude=-88.0836153, observationDate=1986-12-26, startTime=08:00, checklistId=S65028905, protocolType=Traveling, protocolCode=P22, duration=75, effortDistanceKm=0.644, effortAreaHa=null, numberOfObservers=3, isComplete=true, groupId=G5020412, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,508 31746 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,509 31747 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS130942146, commonName=Rock Pigeon, scientificName=Columba livia, subspeciesCommonName=Rock Pigeon (Feral Pigeon), subspeciesScientificName=Columba livia (Feral Pigeon), observationCount=null, countryCode=CA, stateCode=CA-BC, countyCode=CA-BC-GV, localityId=L275701, localityName=Stanley Park, latitude=49.3029688, longitude=-123.1432629, observationDate=1969-04-05, startTime=null, checklistId=S9178051, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,509 31747 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,509 31747 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS414697955, commonName=Wood Duck, scientificName=Aix sponsa, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=2, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L265942, localityName=Jackson Park, Chicago, latitude=41.781201, longitude=-87.5813341, observationDate=1981-05-31, startTime=05:30, checklistId=S30434765, protocolType=Historical, protocolCode=P62, duration=270, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=3, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,510 31748 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,510 31748 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS700214765, commonName=Killdeer, scientificName=Charadrius vociferus, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=5, countryCode=CA, stateCode=CA-ON, countyCode=CA-ON-HA, localityId=L1308087, localityName=Hamilton--Tollgate Ponds, latitude=43.2831415, longitude=-79.7913837, observationDate=1995-05-24, startTime=18:30, checklistId=S51830952, protocolType=Historical, protocolCode=P62, duration=120, effortDistanceKm=1.0, effortAreaHa=null, numberOfObservers=13, isComplete=true, groupId=G3776002, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,510 31748 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,511 31749 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS269461637, commonName=Pied-billed Grebe, scientificName=Podilymbus podiceps, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=CA, stateCode=CA-BC, countyCode=CA-BC-GV, localityId=L275701, localityName=Stanley Park, latitude=49.3029688, longitude=-123.1432629, observationDate=1968-06-30, startTime=null, checklistId=S19601862, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,511 31749 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,511 31749 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS222031324, commonName=Song Sparrow, scientificName=Melospiza melodia, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-WA, countyCode=US-WA-033, localityId=L162766, localityName=Union Bay Natural Area/Montlake Fill, latitude=47.65424, longitude=-122.29137, observationDate=1994-11-12, startTime=null, checklistId=S16029343, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,512 31750 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,512 31750 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS785176033, commonName=Bay-breasted Warbler, scientificName=Setophaga castanea, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=2, countryCode=US, stateCode=US-IL, countyCode=US-IL-043, localityId=L132618, localityName=Morton Arboretum--East Side, latitude=41.8143142, longitude=-88.0647755, observationDate=1996-05-10, startTime=09:00, checklistId=S58183050, protocolType=Traveling, protocolCode=P22, duration=60, effortDistanceKm=2.253, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,513 31751 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,513 31751 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS72206186, commonName=Western Gull, scientificName=Larus occidentalis, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-CA, countyCode=US-CA-037, localityId=L367646, localityName=Banning Park, latitude=33.7899459, longitude=-118.2588422, observationDate=1996-10-01, startTime=11:30, checklistId=S5125426, protocolType=Area, protocolCode=P23, duration=15, effortDistanceKm=null, effortAreaHa=3.0, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,514 31752 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,514 31752 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS355697762, commonName=Great Black-backed Gull, scientificName=Larus marinus, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-MA, countyCode=US-MA-021, localityId=L723879, localityName=Wollaston Beach, latitude=42.2787694, longitude=-71.0136938, observationDate=1997-05-18, startTime=null, checklistId=S26013803, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,514 31752 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,515 31753 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS311853843, commonName=Palm Warbler, scientificName=Setophaga palmarum, subspeciesCommonName=Palm Warbler (Western), subspeciesScientificName=Setophaga palmarum palmarum, observationCount=18, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L265942, localityName=Jackson Park, Chicago, latitude=41.781201, longitude=-87.5813341, observationDate=1996-05-09, startTime=17:25, checklistId=S22984044, protocolType=Traveling, protocolCode=P22, duration=145, effortDistanceKm=9.189, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,515 31753 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,515 31753 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS444057286, commonName=Red-winged Blackbird, scientificName=Agelaius phoeniceus, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=CA, stateCode=CA-ON, countyCode=CA-ON-TO, localityId=L1507989, localityName=Toronto--Humber River Marshes, latitude=43.6395147, longitude=-79.4845377, observationDate=1905-04-27, startTime=null, checklistId=S32620203, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,516 31754 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,516 31754 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS876120009, commonName=Wood Duck, scientificName=Aix sponsa, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L152740, localityName=Jackson Park, Chicago--Wooded Island/Bobolink Meadow area, latitude=41.7857131, longitude=-87.5829649, observationDate=1999-08-03, startTime=06:25, checklistId=S65606408, protocolType=Historical, protocolCode=P62, duration=135, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,516 31754 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,516 31754 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS518282410, commonName=Black-capped Chickadee, scientificName=Poecile atricapillus, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=5, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L152740, localityName=Jackson Park, Chicago--Wooded Island/Bobolink Meadow area, latitude=41.7857131, longitude=-87.5829649, observationDate=1994-08-01, startTime=06:50, checklistId=S38114183, protocolType=Historical, protocolCode=P62, duration=125, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,517 31755 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,517 31755 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS217891011, commonName=Carolina Chickadee, scientificName=Poecile carolinensis, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-VA, countyCode=US-VA-059, localityId=L718429, localityName=Ellanor C. Lawrence Park, latitude=38.8615341, longitude=-77.4301092, observationDate=1983-11-18, startTime=null, checklistId=S15684998, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,518 31756 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,519 31757 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS563201845, commonName=American Kestrel, scientificName=Falco sparverius, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=2, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L654763, localityName=James Park/Mt Trashmore, Evanston, latitude=42.0246861, longitude=-87.7040505, observationDate=1985-10-27, startTime=09:00, checklistId=S41555384, protocolType=Traveling, protocolCode=P22, duration=75, effortDistanceKm=1.127, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,520 31758 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,520 31758 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS943609939, commonName=Dusky Moorhen, scientificName=Gallinula tenebrosa, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=AU, stateCode=AU-VIC, countyCode=AU-VIC-MON, localityId=L2040863, localityName=Jells Park, latitude=-37.8981684, longitude=145.1998361, observationDate=1988-12-09, startTime=09:00, checklistId=S70492546, protocolType=Historical, protocolCode=P62, duration=300, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,520 31758 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,521 31759 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS948819066, commonName=Song Sparrow, scientificName=Melospiza melodia, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=2, countryCode=US, stateCode=US-NY, countyCode=US-NY-081, localityId=L6357406, localityName=Jacob Riis Park--Magic Corner (S of golf course), latitude=40.563639, longitude=-73.879426, observationDate=1961-12-31, startTime=10:00, checklistId=S70883958, protocolType=Traveling, protocolCode=P22, duration=120, effortDistanceKm=1.0, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,521 31759 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,522 31760 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS27699640, commonName=Red-breasted Nuthatch, scientificName=Sitta canadensis, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=2, countryCode=CA, stateCode=CA-QC, countyCode=CA-QC-MR, localityId=L165056, localityName=Jardin botanique de Montréal (accès restreint), latitude=45.5596562, longitude=-73.5626078, observationDate=1998-02-15, startTime=14:15, checklistId=S2082406, protocolType=Area, protocolCode=P23, duration=75, effortDistanceKm=null, effortAreaHa=60.7042, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,522 31760 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,523 31761 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS348635043, commonName=Rock Pigeon, scientificName=Columba livia, subspeciesCommonName=Rock Pigeon (Feral Pigeon), subspeciesScientificName=Columba livia (Feral Pigeon), observationCount=null, countryCode=AU, stateCode=AU-VIC, countyCode=AU-VIC-POR, localityId=L3963838, localityName=Albert Park, latitude=-37.8474347, longitude=144.9701717, observationDate=1992-12-15, startTime=null, checklistId=S25466584, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,523 31761 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,523 31761 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS659731990, commonName=Harlequin Duck, scientificName=Histrionicus histrionicus, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=3, countryCode=CA, stateCode=CA-BC, countyCode=CA-BC-GV, localityId=L2334657, localityName=Stanley Park--Lost Lagoon, latitude=49.295632, longitude=-123.1403017, observationDate=1995-03-16, startTime=null, checklistId=S48691480, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,526 31764 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,526 31764 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS284089449, commonName=Hooded Merganser, scientificName=Lophodytes cucullatus, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=20, countryCode=US, stateCode=US-NY, countyCode=US-NY-059, localityId=L143222, localityName=Hempstead Lake SP, latitude=40.6804811, longitude=-73.6415618, observationDate=1974-01-06, startTime=15:30, checklistId=S20799078, protocolType=Traveling, protocolCode=P22, duration=60, effortDistanceKm=1.609, effortAreaHa=null, numberOfObservers=4, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,527 31765 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,527 31765 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS65792371, commonName=Red-breasted Merganser, scientificName=Mergus serrator, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-NY, countyCode=US-NY-081, localityId=L165143, localityName=Jamaica Bay Wildlife Refuge, latitude=40.6170296, longitude=-73.8244561, observationDate=1980-03-27, startTime=09:45, checklistId=S4719310, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,527 31765 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,528 31766 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS856824786, commonName=Song Sparrow, scientificName=Melospiza melodia, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L265942, localityName=Jackson Park, Chicago, latitude=41.781201, longitude=-87.5813341, observationDate=1998-11-01, startTime=07:45, checklistId=S63843736, protocolType=Historical, protocolCode=P62, duration=170, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,528 31766 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,529 31767 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS305887816, commonName=European Starling, scientificName=Sturnus vulgaris, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L152740, localityName=Jackson Park, Chicago--Wooded Island/Bobolink Meadow area, latitude=41.7857131, longitude=-87.5829649, observationDate=1979-12-21, startTime=null, checklistId=S22563294, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,529 31767 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,529 31767 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS70666070, commonName=American Robin, scientificName=Turdus migratorius, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=25, countryCode=US, stateCode=US-CA, countyCode=US-CA-037, localityId=L684218, localityName=Exposition Park, latitude=34.0162419, longitude=-118.2863617, observationDate=1999-12-15, startTime=08:35, checklistId=S5006798, protocolType=Area, protocolCode=P23, duration=20, effortDistanceKm=null, effortAreaHa=8.0, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,530 31768 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,530 31768 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS864089833, commonName=Blue-and-white Swallow, scientificName=Pygochelidon cyanoleuca, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=BR, stateCode=BR-SP, countyCode=null, localityId=L1800556, localityName=Parque Ibirapuera, latitude=-23.5861978, longitude=-46.6591035, observationDate=1993-03-10, startTime=09:15, checklistId=S64462653, protocolType=Historical, protocolCode=P62, duration=165, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,530 31768 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,531 31769 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS485845810, commonName=Northern Flicker, scientificName=Colaptes auratus, subspeciesCommonName=Northern Flicker (Yellow-shafted), subspeciesScientificName=Colaptes auratus auratus/luteus, observationCount=3, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L351831, localityName=Burnham Park--Promontory Point, latitude=41.7960139, longitude=-87.5765064, observationDate=1983-08-20, startTime=07:05, checklistId=S35977527, protocolType=Historical, protocolCode=P62, duration=45, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,531 31769 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,532 31770 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS310406748, commonName=Chimney Swift, scientificName=Chaetura pelagica, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-MD, countyCode=US-MD-031, localityId=L761179, localityName=C&O Canal--Locks 8-9, latitude=38.970854, longitude=-77.1610808, observationDate=1990-05-03, startTime=null, checklistId=S22890055, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=1.609, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,532 31770 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,532 31770 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS870155095, commonName=Blue Jay, scientificName=Cyanocitta cristata, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=CA, stateCode=CA-QC, countyCode=CA-QC-MR, localityId=L474576, localityName=PN de la Pte-aux-Prairies--Secteur Bois-de-l'Héritage, latitude=45.6802385, longitude=-73.50766, observationDate=1988-09-26, startTime=null, checklistId=S65037566, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,533 31771 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,533 31771 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS115896349, commonName=Bank Swallow, scientificName=Riparia riparia, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L207016, localityName=Chicago Botanic Garden, Glencoe, latitude=42.1470902, longitude=-87.7895394, observationDate=1999-05-16, startTime=08:00, checklistId=S8093290, protocolType=Traveling, protocolCode=P22, duration=90, effortDistanceKm=3.219, effortAreaHa=null, numberOfObservers=1, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,533 31771 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,533 31771 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS551586178, commonName=American Robin, scientificName=Turdus migratorius, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-CA, countyCode=US-CA-065, localityId=L279316, localityName=Fairmount Park, latitude=33.9963966, longitude=-117.3789295, observationDate=1984-01-17, startTime=08:00, checklistId=S40672438, protocolType=Historical, protocolCode=P62, duration=110, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,534 31772 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,534 31772 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS268505566, commonName=Pied-billed Grebe, scientificName=Podilymbus podiceps, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=3, countryCode=US, stateCode=US-WA, countyCode=US-WA-033, localityId=L232479, localityName=Juanita Bay Park, latitude=47.6981686, longitude=-122.2101878, observationDate=1999-01-10, startTime=null, checklistId=S19531073, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,535 31773 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,535 31773 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS435373346, commonName=Dunlin, scientificName=Calidris alpina, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=4, countryCode=US, stateCode=US-CA, countyCode=US-CA-059, localityId=L859765, localityName=Newport Back Bay, latitude=33.6264124, longitude=-117.8853178, observationDate=1978-01-01, startTime=07:00, checklistId=S31980693, protocolType=Traveling, protocolCode=P22, duration=120, effortDistanceKm=3.219, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,535 31773 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,535 31773 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS687603320, commonName=Sharp-shinned/Cooper's Hawk, scientificName=Accipiter striatus/cooperii, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-NY, countyCode=US-NY-005, localityId=L1817862, localityName=Van Cortlandt Park--Croton Woods, latitude=40.9024364, longitude=-73.881972, observationDate=1962-06-01, startTime=null, checklistId=S50803156, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,536 31774 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,536 31774 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS554610426, commonName=Wood Duck, scientificName=Aix sponsa, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=CA, stateCode=CA-ON, countyCode=CA-ON-TO, localityId=L450752, localityName=Toronto--Harbour Square Park, latitude=43.6401438, longitude=-79.3762663, observationDate=1978-01-12, startTime=null, checklistId=S40908067, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,536 31774 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,537 31775 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS474443457, commonName=Yellow-rumped Warbler, scientificName=Setophaga coronata, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=6, countryCode=US, stateCode=US-NY, countyCode=US-NY-081, localityId=L165143, localityName=Jamaica Bay Wildlife Refuge, latitude=40.6170296, longitude=-73.8244561, observationDate=1992-10-01, startTime=null, checklistId=S35110184, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,537 31775 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,537 31775 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS361014974, commonName=American Black Duck, scientificName=Anas rubripes, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-NY, countyCode=US-NY-085, localityId=L4079434, localityName=Freshkills Park--West Mound, latitude=40.5670336, longitude=-74.2012693, observationDate=1987-08-10, startTime=10:00, checklistId=S26449591, protocolType=Historical, protocolCode=P62, duration=240, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=8, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,537 31775 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,538 31776 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS849877116, commonName=American Crow, scientificName=Corvus brachyrhynchos, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L152603, localityName=Bartel Grassland, latitude=41.5356, longitude=-87.7555, observationDate=1999-06-23, startTime=05:18, checklistId=S63272677, protocolType=Stationary, protocolCode=P21, duration=5, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,538 31776 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,538 31776 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS833904394, commonName=House Sparrow, scientificName=Passer domesticus, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=20, countryCode=CA, stateCode=CA-QC, countyCode=CA-QC-CP, localityId=L447776, localityName=Parc Marie-Victorin & Pointe du Marigot, latitude=45.550148, longitude=-73.5039454, observationDate=1987-10-07, startTime=14:30, checklistId=S61911969, protocolType=Traveling, protocolCode=P22, duration=90, effortDistanceKm=2.0, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,539 31777 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,539 31777 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS485844105, commonName=Belted Kingfisher, scientificName=Megaceryle alcyon, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=2, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L152740, localityName=Jackson Park, Chicago--Wooded Island/Bobolink Meadow area, latitude=41.7857131, longitude=-87.5829649, observationDate=1983-08-09, startTime=08:30, checklistId=S35977456, protocolType=Historical, protocolCode=P62, duration=110, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,539 31777 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,540 31778 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS205460687, commonName=Baltimore Oriole, scientificName=Icterus galbula, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=2, countryCode=CA, stateCode=CA-ON, countyCode=CA-ON-HA, localityId=L457200, localityName=Hamilton--Van Wagners Beach, latitude=43.2592372, longitude=-79.7648245, observationDate=1997-09-07, startTime=null, checklistId=S14724410, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,540 31778 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,540 31778 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS726282107, commonName=Great Spotted Woodpecker, scientificName=Dendrocopos major, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=GB, stateCode=GB-ENG, countyCode=GB-ENG-LND, localityId=L3020442, localityName=Osterley Park and House, latitude=51.4900949, longitude=-0.3486657, observationDate=1978-04-17, startTime=null, checklistId=S53989610, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=3, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,541 31779 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,541 31779 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS348621998, commonName=Little Raven, scientificName=Corvus mellori, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=16, countryCode=AU, stateCode=AU-VIC, countyCode=AU-VIC-POR, localityId=L3963838, localityName=Albert Park, latitude=-37.8474347, longitude=144.9701717, observationDate=1986-01-15, startTime=null, checklistId=S25466083, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,541 31779 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,542 31780 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS56880232, commonName=Black-crowned Night-Heron, scientificName=Nycticorax nycticorax, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=3, countryCode=US, stateCode=US-NY, countyCode=US-NY-047, localityId=L109516, localityName=Prospect Park, latitude=40.6602841, longitude=-73.9689534, observationDate=1999-06-19, startTime=null, checklistId=S4111205, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,542 31780 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,542 31780 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS115446251, commonName=Red-winged Blackbird, scientificName=Agelaius phoeniceus, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-MI, countyCode=US-MI-163, localityId=L511955, localityName=UM Dearborn--Rouge River Bird Observatory, latitude=42.3193991, longitude=-83.239975, observationDate=1995-04-05, startTime=16:00, checklistId=S8061681, protocolType=Traveling, protocolCode=P22, duration=150, effortDistanceKm=2.575, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=G249926, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,542 31780 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,543 31781 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS150488516, commonName=Veery, scientificName=Catharus fuscescens, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-NJ, countyCode=US-NJ-039, localityId=L188886, localityName=Watchung Reservation, latitude=40.6799244, longitude=-74.3794887, observationDate=1993-05-09, startTime=07:00, checklistId=S10588282, protocolType=Traveling, protocolCode=P22, duration=150, effortDistanceKm=4.828, effortAreaHa=null, numberOfObservers=1, isComplete=false, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,543 31781 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,543 31781 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS225159531, commonName=Canada Goose, scientificName=Branta canadensis, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-WA, countyCode=US-WA-033, localityId=L163354, localityName=Green Lake, latitude=47.681797, longitude=-122.33953, observationDate=1995-04-01, startTime=null, checklistId=S16303403, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,544 31782 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,544 31782 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS976396655, commonName=Bay-breasted Warbler, scientificName=Setophaga castanea, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-MA, countyCode=US-MA-009, localityId=L594125, localityName=Marblehead Neck Wildlife Sanctuary (Mass Audubon), latitude=42.4930171, longitude=-70.8401871, observationDate=1970-05-15, startTime=null, checklistId=S73180867, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,544 31782 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,545 31783 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS457826722, commonName=Mourning Dove, scientificName=Zenaida macroura, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-WA, countyCode=US-WA-033, localityId=L162766, localityName=Union Bay Natural Area/Montlake Fill, latitude=47.65424, longitude=-122.29137, observationDate=1991-04-29, startTime=12:00, checklistId=S33687790, protocolType=Traveling, protocolCode=P22, duration=120, effortDistanceKm=3.219, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,545 31783 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,545 31783 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS908367824, commonName=Common Buzzard, scientificName=Buteo buteo, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=2, countryCode=ES, stateCode=ES-CT, countyCode=ES-CT-BR, localityId=L2723786, localityName=Delta del Llobregat PNat--Remolar-Filipines, latitude=41.2816604, longitude=2.0648503, observationDate=1999-11-13, startTime=15:30, checklistId=S68195183, protocolType=Traveling, protocolCode=P22, duration=120, effortDistanceKm=1.0, effortAreaHa=null, numberOfObservers=2, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,546 31784 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,546 31784 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS696024871, commonName=Alder Flycatcher, scientificName=Empidonax alnorum, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=CA, stateCode=CA-QC, countyCode=CA-QC-MR, localityId=L469060, localityName=Parc Summit, latitude=45.4917128, longitude=-73.6071465, observationDate=1975-05-25, startTime=null, checklistId=S51478496, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,546 31784 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,546 31784 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS602026858, commonName=American Redstart, scientificName=Setophaga ruticilla, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=5, countryCode=CA, stateCode=CA-QC, countyCode=CA-QC-MR, localityId=L1912155, localityName=Domaine St-Paul, latitude=45.4546332, longitude=-73.5529532, observationDate=1996-05-21, startTime=null, checklistId=S44718145, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,547 31785 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,547 31785 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS490859125, commonName=American Goldfinch, scientificName=Spinus tristis, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L351831, localityName=Burnham Park--Promontory Point, latitude=41.7960139, longitude=-87.5765064, observationDate=1983-09-14, startTime=07:15, checklistId=S36305114, protocolType=Historical, protocolCode=P62, duration=35, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=3, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,547 31785 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,547 31785 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS824859736, commonName=Blue Jay, scientificName=Cyanocitta cristata, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L3615041, localityName=Clark Street Beach Bird Sanctuary, Evanston, latitude=42.0498389, longitude=-87.6736833, observationDate=1995-07-04, startTime=null, checklistId=S61218677, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,548 31786 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,548 31786 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS238621048, commonName=Cliff Swallow, scientificName=Petrochelidon pyrrhonota, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=US, stateCode=US-WA, countyCode=US-WA-033, localityId=L351484, localityName=Marymoor Park, latitude=47.662576, longitude=-122.12052, observationDate=1992-06-01, startTime=null, checklistId=S17347462, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=G821643, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,548 31786 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,548 31786 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS367346135, commonName=Cedar Waxwing, scientificName=Bombycilla cedrorum, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=6, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L265942, localityName=Jackson Park, Chicago, latitude=41.781201, longitude=-87.5813341, observationDate=1997-03-20, startTime=07:05, checklistId=S27011114, protocolType=Historical, protocolCode=P62, duration=150, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,549 31787 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,549 31787 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS67122820, commonName=Barn Swallow, scientificName=Hirundo rustica, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=1, countryCode=US, stateCode=US-IL, countyCode=US-IL-031, localityId=L143490, localityName=Thatcher Woods Forest Preserve, latitude=41.8935699, longitude=-87.8297882, observationDate=1997-05-18, startTime=06:55, checklistId=S4801473, protocolType=Traveling, protocolCode=P22, duration=185, effortDistanceKm=4.023, effortAreaHa=null, numberOfObservers=1, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,549 31787 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,550 31788 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS303644795, commonName=Canada Goose, scientificName=Branta canadensis, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=null, countryCode=GB, stateCode=GB-ENG, countyCode=GB-ENG-LND, localityId=L2083779, localityName=Walthamstow Wetlands, latitude=51.5856349, longitude=-0.0539798, observationDate=1998-12-29, startTime=null, checklistId=S22391301, protocolType=Historical, protocolCode=P62, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted
+2020-11-20 11:57:51,550 31788 [pool-1-thread-2] ERROR ebird2postgres.Importer - IO Error after reading row null
+2020-11-20 11:57:51,551 31789 [pool-1-thread-2] ERROR ebird2postgres.Importer - Error processing row
+java.lang.IllegalStateException: Failed to create entries from EBirdRecord [id=URN:CornellLabOfOrnithology:EBIRD:OBS56845461, commonName=American Black Duck, scientificName=Anas rubripes, subspeciesCommonName=null, subspeciesScientificName=null, observationCount=50, countryCode=US, stateCode=US-NY, countyCode=US-NY-047, localityId=L109516, localityName=Prospect Park, latitude=40.6602841, longitude=-73.9689534, observationDate=1963-04-04, startTime=null, checklistId=S4109155, protocolType=Incidental, protocolCode=P20, duration=null, effortDistanceKm=null, effortAreaHa=null, numberOfObservers=null, isComplete=true, groupId=null, recordApproved=true, approvalReason=0]
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:89)
+	at ebird2postgres.ebird.EBirdReader.writingThread(EBirdReader.java:86)
+	at ebird2postgres.ebird.EBirdReader.lambda$startWriting$1(EBirdReader.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLException: Data source is closed
+	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:512)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:734)
+	at ebird2postgres.Importer$RecordHandler.handle(Importer.java:78)
+	... 7 common frames omitted

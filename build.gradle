@@ -4,12 +4,6 @@ plugins {
 	id 'eclipse'
 }
 
-java {
-	toolchain {
-		languageVersion = 11
-	}
-}
-
 repositories {
 	mavenCentral()
     jcenter()
@@ -23,5 +17,7 @@ dependencies {
 	implementation 'com.dropbox.core:dropbox-core-sdk:3.1.5'
 	implementation 'commons-cli:commons-cli:1.4'
 	implementation 'org.apache.commons:commons-dbcp2:2.8.0'
-
+	implementation 'ch.qos.logback:logback-api:1.2.3'
+	implementation 'ch.qos.logback:logback-core:1.2.3'
+	implementation 'ch.qos.logback:logback-classic:1.2.3'
 }

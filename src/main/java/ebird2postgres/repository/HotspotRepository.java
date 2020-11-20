@@ -9,11 +9,17 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
 import ebird2postgres.ebird.EBirdRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class HotspotRepository {
+	private final static Logger LOGGER = LoggerFactory.getLogger(HotspotRepository.class);
 
 	private final Cache<String, Hotspot> cache = CacheBuilder
-			.newBuilder().maximumSize(2000). <String, Hotspot> build();
+			.newBuilder()
+			.maximumSize(5000)
+			.removalListener(n -> LOGGER.trace("Removing {} from cache", n.getKey()))
+			. <String, Hotspot> build();
 
 	public Hotspot fetchHotspot(final Connection connection, final EBirdRecord ebirdRecord, final List<CityLocation> cityLocations) throws ExecutionException {
 		return cache.get(ebirdRecord.getLocalityId(), () -> loadHotspot(connection, ebirdRecord, cityLocations));

@@ -11,10 +11,17 @@ import com.google.common.cache.LoadingCache;
 
 import ebird2postgres.ebird.EBirdRecord;
 import ebird2postgres.repository.BirdSpecies.BirdSpeciesName;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class BirdSpeciesRepository {
+	private final static Logger LOGGER = LoggerFactory.getLogger(BirdSpeciesRepository.class);
+
 	private final Cache<BirdSpecies.BirdSpeciesName, BirdSpecies> cache = CacheBuilder
-			.newBuilder().maximumSize(2000). <BirdSpecies.BirdSpeciesName, BirdSpecies> build();
+			.newBuilder()
+			.maximumSize(6000)
+			.removalListener(n -> LOGGER.trace("Removing {} from cache", n.getValue()))
+			. <BirdSpecies.BirdSpeciesName, BirdSpecies> build();
 
 	public BirdSpecies fetchBirdSpecies(final Connection connection, final EBirdRecord ebirdRecord) throws ExecutionException {
 		final BirdSpeciesName name = BirdSpecies.createBirdSpeciesName(ebirdRecord);

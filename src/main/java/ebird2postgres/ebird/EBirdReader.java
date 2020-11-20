@@ -1,24 +1,25 @@
 package ebird2postgres.ebird;
 
 import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.atomic.AtomicReference;
 
-import com.univocity.parsers.common.processor.BatchedColumnProcessor;
 import com.univocity.parsers.tsv.TsvParser;
 import com.univocity.parsers.tsv.TsvParserSettings;
 
 public class EBirdReader {
 
 	private static final int MAX_QUEUE_SIZE = 100;
+
+	private final static Logger LOGGER = LoggerFactory.getLogger(EBirdReader.class);
 
 	private final AtomicReference<String> lastRowRead = new AtomicReference<String>();
 
@@ -57,8 +58,10 @@ public class EBirdReader {
 		try (InputStream is = new BufferedInputStream(ebird)) {
 			parser.iterate(is, "UTF-8").forEach(row -> {
 				final String localityId = row[23];
+				LOGGER.trace("Read ebird record for locality {} for record ID {}", localityId, row[0]);
 				if (predicate.accept(localityId)) {
 					try {
+						LOGGER.trace("Added record to queue.");
 						queue.put(new EBirdRecord(row));
 					} catch (Exception e) {
 						errorHandler.handleError(lastRowRead.get(), row, e);
@@ -68,17 +71,20 @@ public class EBirdReader {
 		} catch (IOException e) {
 			errorHandler.handleError(lastRowRead.get(), null, e);
 		}
-		System.out.println("Finished reading file.");
+		queue.notifyAll();
+		LOGGER.info("Finished reading file.");
 	}
 
 	private void writingThread(EBirdRecordHandler recordHandler, EBirdErrorHandler errorHandler) {
 		int retryCount = 0;
 		while (retryCount < 10) {
+			LOGGER.debug("Reading from queue, retryCount={}", retryCount);
+
 			while (!queue.isEmpty()) {
 				retryCount = 0;
 				try {
 					recordHandler.handle(queue.take());
-				} catch (InterruptedException e) {
+				} catch (Exception e) {
 					errorHandler.handleError(lastRowRead.get(), null, e);
 				}
 			}
@@ -90,6 +96,6 @@ public class EBirdReader {
 				errorHandler.handleError(lastRowRead.get(), null, e);
 			}
 		}
-		System.out.println("Finished reading from queue.");
+		LOGGER.info("Finished reading from queue.");
 	}
 }

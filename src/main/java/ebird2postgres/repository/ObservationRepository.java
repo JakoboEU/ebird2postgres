@@ -6,14 +6,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import ebird2postgres.ebird.EBirdRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ObservationRepository {
+
+	private final static Logger LOGGER = LoggerFactory.getLogger(HotspotRepository.class);
 
 	public void store(final Connection connection, final EBirdRecord record, final Checklist checklist, final BirdSpecies birdSpecies) throws SQLException {
 		try (final PreparedStatement ps = connection.prepareStatement("SELECT id FROM observation WHERE id = ?")) {
 			ps.setString(1, record.getId());
 			final ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
+				LOGGER.debug("Observation {} already exists.", record.getId());
 				return;
 			}
 		}
