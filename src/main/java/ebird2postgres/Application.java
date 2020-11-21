@@ -24,8 +24,8 @@ public class Application {
     private final static String EBIRD_FILE_OPTION = "f";
     private final static String DROPBOX_ACCESS_TOKEN = "a";
 
-    // approx 2MB
-    private final static int DROPBOX_READ_CHUNK_SIZE = 2097152;
+    // approx 300MB
+    private final static int DROPBOX_READ_CHUNK_SIZE = 335544320;
 
     static {
         COMMAND_LINE_OPTIONS.addOption(Option.builder(EBIRD_FILE_OPTION).argName("eBird filename in DropBox").hasArg(true).required().build());

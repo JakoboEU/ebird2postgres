@@ -25,21 +25,31 @@ public class EBirdReader {
 		TsvParser parser = new TsvParser(settings);
 
 		parser.iterate(ebird, "UTF-8").forEach(row -> {
+			handleRow(predicate, recordHandler, errorHandler, row);
+		});
+	}
+
+	private void handleRow(final EBirdLocalityPredicate predicate, final EBirdRecordHandler recordHandler, final EBirdErrorHandler errorHandler, final String[] row) {
+		try {
 			if (row.length < 43) {
 				errorHandler.handleError(null, row, new RuntimeException("Invalid row length; " + row.length));
 				return;
 			}
 
 			final String localityId = row[23];
+
+			if (localityId == null) {
+				errorHandler.handleError(null, row, new RuntimeException("localityId is null"));
+				return;
+			}
+
 			LOGGER.trace("Item {0} read.", row[0]);
 			if (predicate.accept(localityId)) {
-				try {
-					LOGGER.trace("Handle {0}.", row[0]);
-					recordHandler.handle(new EBirdRecord(row));
-				} catch (Exception e) {
-					errorHandler.handleError(lastRowRead.get(), row, e);
-				}
+				LOGGER.trace("Handle {0}.", row[0]);
+				recordHandler.handle(new EBirdRecord(row));
 			}
-		});
+		} catch (Exception e) {
+			errorHandler.handleError(lastRowRead.get(), row, e);
+		}
 	}
 }
