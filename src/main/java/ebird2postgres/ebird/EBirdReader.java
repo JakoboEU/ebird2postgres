@@ -1,13 +1,12 @@
 package ebird2postgres.ebird;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.InputStream;
 import java.util.concurrent.atomic.AtomicReference;
 
 import com.univocity.parsers.tsv.TsvParser;
 import com.univocity.parsers.tsv.TsvParserSettings;
+import ebird2postgres.log.Logger;
+import ebird2postgres.log.LoggerFactory;
 
 public class EBirdReader {
 	private final static Logger LOGGER = LoggerFactory.getLogger(EBirdReader.class);
@@ -26,10 +25,16 @@ public class EBirdReader {
 		TsvParser parser = new TsvParser(settings);
 
 		parser.iterate(ebird, "UTF-8").forEach(row -> {
+			if (row.length < 43) {
+				errorHandler.handleError(null, row, new RuntimeException("Invalid row length; " + row.length));
+				return;
+			}
+
 			final String localityId = row[23];
+			LOGGER.trace("Item {0} read.", row[0]);
 			if (predicate.accept(localityId)) {
 				try {
-					LOGGER.trace("Added record {} to queue.", row[0]);
+					LOGGER.trace("Handle {0}.", row[0]);
 					recordHandler.handle(new EBirdRecord(row));
 				} catch (Exception e) {
 					errorHandler.handleError(lastRowRead.get(), row, e);

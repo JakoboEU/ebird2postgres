@@ -6,13 +6,11 @@ import java.util.concurrent.ExecutionException;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
-import com.google.common.cache.LoadingCache;
 
 import ebird2postgres.ebird.EBirdRecord;
+import ebird2postgres.log.Logger;
+import ebird2postgres.log.LoggerFactory;
 import ebird2postgres.repository.BirdSpecies.BirdSpeciesName;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class BirdSpeciesRepository {
 	private final static Logger LOGGER = LoggerFactory.getLogger(BirdSpeciesRepository.class);
@@ -20,7 +18,7 @@ public class BirdSpeciesRepository {
 	private final Cache<BirdSpecies.BirdSpeciesName, BirdSpecies> cache = CacheBuilder
 			.newBuilder()
 			.maximumSize(6000)
-			.removalListener(n -> LOGGER.trace("Removing {} from cache", n.getValue()))
+			.removalListener(n -> LOGGER.trace("Removing {0} from cache", n.getValue()))
 			. <BirdSpecies.BirdSpeciesName, BirdSpecies> build();
 
 	public BirdSpecies fetchBirdSpecies(final Connection connection, final EBirdRecord ebirdRecord) throws ExecutionException {

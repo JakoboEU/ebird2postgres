@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import ebird2postgres.ebird.EBirdRecord;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import ebird2postgres.log.Logger;
+import ebird2postgres.log.LoggerFactory;
 
 public class ObservationRepository {
 
@@ -18,7 +18,7 @@ public class ObservationRepository {
 			ps.setString(1, record.getId());
 			final ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				LOGGER.debug("Observation {} already exists.", record.getId());
+				LOGGER.debug("Observation {0} already exists.", record.getId());
 				return;
 			}
 		}

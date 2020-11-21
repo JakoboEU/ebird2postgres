@@ -9,8 +9,8 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
 import ebird2postgres.ebird.EBirdRecord;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import ebird2postgres.log.Logger;
+import ebird2postgres.log.LoggerFactory;
 
 public class HotspotRepository {
 	private final static Logger LOGGER = LoggerFactory.getLogger(HotspotRepository.class);
@@ -18,7 +18,7 @@ public class HotspotRepository {
 	private final Cache<String, Hotspot> cache = CacheBuilder
 			.newBuilder()
 			.maximumSize(5000)
-			.removalListener(n -> LOGGER.trace("Removing {} from cache", n.getKey()))
+			.removalListener(n -> LOGGER.trace("Removing {0} from cache", n.getKey()))
 			. <String, Hotspot> build();
 
 	public Hotspot fetchHotspot(final Connection connection, final EBirdRecord ebirdRecord, final List<CityLocation> cityLocations) throws ExecutionException {

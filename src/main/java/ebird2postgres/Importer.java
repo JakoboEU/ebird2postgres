@@ -10,6 +10,8 @@ import ebird2postgres.ebird.EBirdReader;
 import ebird2postgres.ebird.EBirdRecord;
 import ebird2postgres.ebird.EBirdRecordHandler;
 import ebird2postgres.locality.UrbanHotspots;
+import ebird2postgres.log.Logger;
+import ebird2postgres.log.LoggerFactory;
 import ebird2postgres.repository.BirdSpecies;
 import ebird2postgres.repository.BirdSpeciesRepository;
 import ebird2postgres.repository.Checklist;
@@ -19,8 +21,6 @@ import ebird2postgres.repository.Hotspot;
 import ebird2postgres.repository.HotspotRepository;
 import ebird2postgres.repository.ObservationRepository;
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static java.util.Collections.singletonList;
 
@@ -90,9 +90,9 @@ public class Importer {
 		@Override
 		public void handleError(String lastRowRead, String[] currentRow, Exception error) {
 			if (currentRow == null) {
-				LOGGER.error("IO Error after reading row {}", lastRowRead);
+				LOGGER.error("IO Error after reading row {0}", lastRowRead);
 			} else {
-				LOGGER.error("Failed to process row {}", Arrays.toString(currentRow));
+				LOGGER.error("Failed to process row {0}", Arrays.toString(currentRow));
 			}
 
 			LOGGER.error("Error processing row", error);

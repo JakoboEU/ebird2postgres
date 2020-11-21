@@ -4,14 +4,14 @@ import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.Metadata;
 import ebird2postgres.dropbox.DropboxInputStream;
+import ebird2postgres.log.Logger;
+import ebird2postgres.log.LoggerFactory;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.commons.cli.ParseException;;
 
 import java.util.Optional;
 
@@ -45,10 +45,10 @@ public class Application {
             ).findFirst();
 
             if (!ebirdFile.isPresent()) {
-                LOGGER.error("Could not find ebird file in Dropbox App folder with name '"  + eBirdFilename + "'. Found:");
-                client.files().listFolder("").getEntries().forEach(metadata -> System.out.println("- " + metadata.getName()));
+                LOGGER.error("Could not find ebird file in Dropbox App folder with name '{0}'. Found:", eBirdFilename);
+                client.files().listFolder("").getEntries().forEach(metadata -> LOGGER.error("- " + metadata.getName()));
             } else {
-                LOGGER.info("Reading file: " + ebirdFile.get().getPathLower());
+                LOGGER.info("Reading file: {0}", ebirdFile.get().getPathLower());
                 final Importer importer = new Importer(new DropboxInputStream(client, ebirdFile.get().getPathLower(), 8192 * 128));
                 importer.importUrbanHotspots();
             }

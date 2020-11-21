@@ -3,8 +3,8 @@ package ebird2postgres.dropbox;
 import com.dropbox.core.DbxException;
 import com.dropbox.core.v2.DbxClientV2;
 import ebird2postgres.Application;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import ebird2postgres.log.Logger;
+import ebird2postgres.log.LoggerFactory;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class DropboxInputStream extends InputStream {
         final int startChunk = nextChunk;
         nextChunk = startChunk + chunkSize;
 
-        LOGGER.debug("Creating stream for next chunk from {} to {}", startChunk, nextChunk);
+        LOGGER.debug("Creating stream for next chunk from {0} to {1}", startChunk, nextChunk);
 
         try {
             return new BufferedInputStream(client.files()
