@@ -24,6 +24,9 @@ public class Application {
     private final static String EBIRD_FILE_OPTION = "f";
     private final static String DROPBOX_ACCESS_TOKEN = "a";
 
+    // approx 2MB
+    private final static int DROPBOX_READ_CHUNK_SIZE = 2097152;
+
     static {
         COMMAND_LINE_OPTIONS.addOption(Option.builder(EBIRD_FILE_OPTION).argName("eBird filename in DropBox").hasArg(true).required().build());
         COMMAND_LINE_OPTIONS.addOption(Option.builder(DROPBOX_ACCESS_TOKEN).argName("DropBox Access Token").hasArg(true).required().build());
@@ -49,7 +52,7 @@ public class Application {
                 client.files().listFolder("").getEntries().forEach(metadata -> LOGGER.error("- " + metadata.getName()));
             } else {
                 LOGGER.info("Reading file: {0}", ebirdFile.get().getPathLower());
-                final Importer importer = new Importer(new DropboxInputStream(client, ebirdFile.get().getPathLower(), 8192 * 128));
+                final Importer importer = new Importer(new DropboxInputStream(client, ebirdFile.get().getPathLower(), DROPBOX_READ_CHUNK_SIZE));
                 importer.importUrbanHotspots();
             }
         } catch (ParseException e) {

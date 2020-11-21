@@ -18,7 +18,7 @@ public class DropboxInputStream extends InputStream {
     private final int chunkSize;
 
     private InputStream inputStream;
-    private int nextChunk;
+    private long nextChunk;
 
     public DropboxInputStream(final DbxClientV2 client, final String fileName, final int chunkSize) throws IOException {
         this.client = client;
@@ -39,15 +39,15 @@ public class DropboxInputStream extends InputStream {
     }
 
     private InputStream getNextChunk() throws IOException {
-        final int startChunk = nextChunk;
+        final long startChunk = nextChunk;
         nextChunk = startChunk + chunkSize;
 
-        LOGGER.debug("Creating stream for next chunk from {0} to {1}", startChunk, nextChunk);
+        LOGGER.debug("Creating stream for next chunk from {0}", startChunk);
 
         try {
             return new BufferedInputStream(client.files()
                         .downloadBuilder(downloadFileName)
-                        .range(startChunk, nextChunk)
+                        .range(startChunk, chunkSize)
                         .start()
                         .getInputStream(), chunkSize);
         } catch (DbxException e) {
