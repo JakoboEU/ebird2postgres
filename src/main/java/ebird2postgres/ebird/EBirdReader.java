@@ -1,6 +1,11 @@
 package ebird2postgres.ebird;
 
 import java.io.InputStream;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
 import com.univocity.parsers.tsv.TsvParser;
@@ -11,22 +16,32 @@ import ebird2postgres.log.LoggerFactory;
 public class EBirdReader {
 	private final static Logger LOGGER = LoggerFactory.getLogger(EBirdReader.class);
 
-	private final AtomicReference<String> lastRowRead = new AtomicReference<String>();
-
 	private final InputStream ebird;
+
+	private final AtomicBoolean finishedReadingEBird = new AtomicBoolean(false);
+
+	private final Executor producerThread = Executors.newSingleThreadExecutor();
+
+	private final BlockingQueue<String[]> queue = new ArrayBlockingQueue<>(1024);
 
 	public EBirdReader(final InputStream ebird) {
 		this.ebird = ebird;
 	}
 	
 	public void read(final EBirdLocalityPredicate predicate, final EBirdRecordHandler recordHandler, final EBirdErrorHandler errorHandler) {
-		TsvParserSettings settings = new TsvParserSettings();
-		settings.setHeaderExtractionEnabled(true);
-		TsvParser parser = new TsvParser(settings);
+		producerThread.execute(new EBirdRecordProducer(errorHandler));
 
-		parser.iterate(ebird, "UTF-8").forEach(row -> {
-			handleRow(predicate, recordHandler, errorHandler, row);
-		});
+		final AtomicReference<String> lastRowRead = new AtomicReference<String>();
+
+		while (!finishedReadingEBird.get()) {
+			try {
+				final String[] take = queue.take();
+				lastRowRead.set(take[0]);
+				handleRow(predicate, recordHandler, errorHandler, take);
+			} catch (InterruptedException e) {
+				errorHandler.handleError(lastRowRead.get(), null, e);
+			}
+		}
 	}
 
 	private void handleRow(final EBirdLocalityPredicate predicate, final EBirdRecordHandler recordHandler, final EBirdErrorHandler errorHandler, final String[] row) {
@@ -49,7 +64,39 @@ public class EBirdReader {
 				recordHandler.handle(new EBirdRecord(row));
 			}
 		} catch (Exception e) {
-			errorHandler.handleError(lastRowRead.get(), row, e);
+			errorHandler.handleError(null, row, e);
+		}
+	}
+
+	private final class EBirdRecordProducer implements Runnable {
+
+		private final EBirdErrorHandler errorHandler;
+
+		private EBirdRecordProducer(final EBirdErrorHandler errorHandler) {
+			this.errorHandler = errorHandler;
+		}
+
+		@Override
+		public void run() {
+			TsvParserSettings settings = new TsvParserSettings();
+			settings.setHeaderExtractionEnabled(true);
+			TsvParser parser = new TsvParser(settings);
+
+			final AtomicReference<String> lastRowRead = new AtomicReference<String>();
+
+			parser.iterate(ebird, "UTF-8").forEach(row -> {
+				try {
+					LOGGER.trace("Adding {0}.", row[0]);
+					queue.put(row);
+					lastRowRead.set(row[0]);
+				} catch (Exception e) {
+					errorHandler.handleError(lastRowRead.get(), null, e);
+				}
+			});
+
+			LOGGER.info("Finished reading eBird file");
+
+			finishedReadingEBird.set(true);
 		}
 	}
 }
