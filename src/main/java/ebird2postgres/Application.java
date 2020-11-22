@@ -11,7 +11,7 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;;
+import org.apache.commons.cli.ParseException;
 
 import java.util.Optional;
 
@@ -26,6 +26,8 @@ public class Application {
 
     // approx 300MB                                   2147483648
     private final static int DROPBOX_READ_CHUNK_SIZE = 335544320;
+
+    private final static long DROPBOX_START_READING = 2684354560l;
 
     static {
         COMMAND_LINE_OPTIONS.addOption(Option.builder(EBIRD_FILE_OPTION).argName("eBird filename in DropBox").hasArg(true).required().build());
@@ -52,8 +54,7 @@ public class Application {
                 client.files().listFolder("").getEntries().forEach(metadata -> LOGGER.error("- " + metadata.getName()));
             } else {
                 LOGGER.info("Reading file: {0}", ebirdFile.get().getPathLower());
-                final Importer importer = new Importer(new DropboxInputStream(client, ebirdFile.get().getPathLower(), DROPBOX_READ_CHUNK_SIZE));
-                //final Importer importer = new Importer(new BufferedInputStream(client.files().download(ebirdFile.get().getPathLower()).getInputStream(), DROPBOX_READ_CHUNK_SIZE));
+                final Importer importer = new Importer(new DropboxInputStream(client, ebirdFile.get().getPathLower(), DROPBOX_START_READING, DROPBOX_READ_CHUNK_SIZE));
                 importer.importUrbanHotspots();
             }
         } catch (ParseException e) {
@@ -61,5 +62,7 @@ public class Application {
             HelpFormatter formatter = new HelpFormatter();
             formatter.printHelp( "ant", COMMAND_LINE_OPTIONS);
         }
+
+        System.exit(0);
     }
 }
