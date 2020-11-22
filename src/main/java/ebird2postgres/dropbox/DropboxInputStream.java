@@ -42,7 +42,7 @@ public class DropboxInputStream extends InputStream {
         final long startChunk = nextChunk;
         nextChunk = startChunk + chunkSize;
 
-        LOGGER.debug("Creating stream for next chunk from {0}", startChunk);
+        LOGGER.info("Creating stream for next chunk from {0}", startChunk);
 
         try {
             return new BufferedInputStream(client.files()
