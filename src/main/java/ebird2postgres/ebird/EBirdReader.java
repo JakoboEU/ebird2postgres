@@ -1,17 +1,25 @@
 package ebird2postgres.ebird;
 
 import java.io.InputStream;
+import java.lang.management.ManagementFactory;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 
 import com.univocity.parsers.tsv.TsvParser;
 import com.univocity.parsers.tsv.TsvParserSettings;
 import ebird2postgres.log.Logger;
 import ebird2postgres.log.LoggerFactory;
+
+import javax.management.InstanceAlreadyExistsException;
+import javax.management.MBeanRegistrationException;
+import javax.management.MalformedObjectNameException;
+import javax.management.NotCompliantMBeanException;
+import javax.management.ObjectName;
 
 public class EBirdReader {
 	private final static Logger LOGGER = LoggerFactory.getLogger(EBirdReader.class);
@@ -26,23 +34,30 @@ public class EBirdReader {
 
 	private final BlockingQueue<EBirdRecord> recordQueue = new ArrayBlockingQueue<>(1024);
 
-	public EBirdReader(final InputStream ebird) {
+	private final AtomicLong totalRecordsRead = new AtomicLong();
+	private final AtomicReference<String> lastRowRead = new AtomicReference<>();
+
+	private final AtomicLong totalRecordsAccepted = new AtomicLong();
+	private final AtomicReference<String> lastRowAccepted = new AtomicReference<>();
+
+	public EBirdReader(final InputStream ebird) throws MalformedObjectNameException, NotCompliantMBeanException, InstanceAlreadyExistsException, MBeanRegistrationException {
 		this.ebird = ebird;
+		ManagementFactory.getPlatformMBeanServer().registerMBean(new EBirdReaderStatus(), new ObjectName("ebird2postgres.ebird:type=EBirdReaderStatus"));
 	}
 	
 	public void read(final EBirdLocalityPredicate predicate, final EBirdRecordHandler recordHandler, final EBirdErrorHandler errorHandler) {
 		producerThread.execute(new RowProducer(errorHandler));
 		producerThread.execute(new EBirdRecordProducer(predicate, errorHandler));
 
-		final AtomicReference<String> lastRowRead = new AtomicReference<String>();
 		while (!finishedReadingEBird.get() || !rowQueue.isEmpty() || !recordQueue.isEmpty()) {
 			try {
 				final EBirdRecord record = recordQueue.take();
-				LOGGER.debug("Storing {0}", record.getId());
+				LOGGER.trace("Storing {0}", record.getId());
 				recordHandler.handle(record);
-				lastRowRead.set(record.getId());
+				lastRowAccepted.set(record.getId());
+				totalRecordsAccepted.incrementAndGet();
 			} catch (InterruptedException e) {
-				errorHandler.handleError(lastRowRead.get(), null, e);
+				errorHandler.handleError(lastRowAccepted.get(), null, e);
 			}
 		}
 	}
@@ -110,13 +125,12 @@ public class EBirdReader {
 			settings.setHeaderExtractionEnabled(true);
 			TsvParser parser = new TsvParser(settings);
 
-			final AtomicReference<String> lastRowRead = new AtomicReference<String>();
-
 			parser.iterate(ebird, "UTF-8").forEach(row -> {
 				try {
 					LOGGER.trace("Adding {0}.", row[0]);
 					rowQueue.put(row);
 					lastRowRead.set(row[0]);
+					totalRecordsRead.incrementAndGet();
 				} catch (Exception e) {
 					errorHandler.handleError(lastRowRead.get(), null, e);
 				}
@@ -125,6 +139,53 @@ public class EBirdReader {
 			LOGGER.info("Finished reading eBird file");
 
 			finishedReadingEBird.set(true);
+		}
+	}
+
+	public interface EBirdReaderStatusMBean {
+		int getRowQueueSize();
+
+		int getRecordQueueSize();
+
+		long getTotalItemsRead();
+
+		long getTotalRecordsAccepted();
+
+		String getLastRecordRead();
+
+		String getLastRecordAccepted();
+	}
+
+	private final class EBirdReaderStatus implements EBirdReaderStatusMBean {
+
+		@Override
+		public int getRowQueueSize() {
+			return rowQueue.size();
+		}
+
+		@Override
+		public int getRecordQueueSize() {
+			return recordQueue.size();
+		}
+
+		@Override
+		public long getTotalItemsRead() {
+			return totalRecordsRead.get();
+		}
+
+		@Override
+		public long getTotalRecordsAccepted() {
+			return totalRecordsAccepted.get();
+		}
+
+		@Override
+		public String getLastRecordRead() {
+			return lastRowRead.get();
+		}
+
+		@Override
+		public String getLastRecordAccepted() {
+			return lastRowAccepted.get();
 		}
 	}
 }
