@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import ebird2postgres.ebird.EBirdRecord;
 import ebird2postgres.log.Logger;
@@ -13,13 +14,20 @@ public class ObservationRepository {
 
 	private final static Logger LOGGER = LoggerFactory.getLogger(HotspotRepository.class);
 
+	private final AtomicBoolean haveSeenObservationPrevious = new AtomicBoolean(true);
+
 	public void store(final Connection connection, final EBirdRecord record, final Checklist checklist, final BirdSpecies birdSpecies) throws SQLException {
-		try (final PreparedStatement ps = connection.prepareStatement("SELECT id FROM observation WHERE id = ?")) {
-			ps.setString(1, record.getId());
-			final ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
-				LOGGER.debug("Observation {0} already exists.", record.getId());
-				return;
+		if (haveSeenObservationPrevious.get()) {
+			try (final PreparedStatement ps = connection.prepareStatement("SELECT id FROM observation WHERE id = ?")) {
+				ps.setString(1, record.getId());
+				final ResultSet rs = ps.executeQuery();
+				if (rs.next()) {
+					LOGGER.trace("Observation {0} already exists.", record.getId());
+					return;
+				} else {
+					LOGGER.info("Finished viewing observations that already exist, starting to import from {0}", record.getId());
+					haveSeenObservationPrevious.set(false);
+				}
 			}
 		}
 		
